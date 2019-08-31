@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>StellarConfigurationReader.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">SC_Lab4_Cover (May 17, 2019 11:39:10 AM)</a> &gt; <a href="../../index.html" class="el_group">SC_Lab4_Cover</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">configuration</a> &gt; <span class="el_source">StellarConfigurationReader.java</span></div><h1>StellarConfigurationReader.java</h1><pre class="source lang-java linenums">package configuration;
+
+import configuration.Exception.ConfigurationLabelException;
+import configuration.Exception.ConfigurationSyntaxException;
+import factory.PlanetFactory;
+import factory.StellarFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.File;
+import java.math.BigDecimal;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+/**
+ * the implement of a configuration reader of a stellar system
+ *
+ * @author Guo Ziyang
+ */
+<span class="pc bpc" id="L22" title="1 of 2 branches missed.">public class StellarConfigurationReader extends ConfigurationReader {</span>
+
+	private StellarConfiguration stellarConfiguration;
+	private StellarFactory stellarFactory;
+	private PlanetFactory planetFactory;
+<span class="fc" id="L27">	private static Set&lt;String&gt; planetNameSet = new HashSet&lt;&gt;();</span>
+
+<span class="fc" id="L29">	protected Logger logger = LoggerFactory.getLogger(StellarConfigurationReader.class);</span>
+
+	public StellarConfigurationReader(File file) {
+<span class="fc" id="L32">		super(file);</span>
+<span class="fc" id="L33">		configuration = new StellarConfiguration();</span>
+<span class="fc" id="L34">		stellarFactory = new StellarFactory();</span>
+<span class="fc" id="L35">		planetFactory = new PlanetFactory();</span>
+<span class="fc" id="L36">		stellarConfiguration = (StellarConfiguration) configuration;</span>
+<span class="fc" id="L37">		planetNameSet.clear();</span>
+<span class="fc" id="L38">	}</span>
+
+	@Override
+	public void checkRep() {
+<span class="fc" id="L42">		super.checkRep();</span>
+<span class="pc bpc" id="L43" title="2 of 4 branches missed.">		assert configuration != null;</span>
+<span class="pc bpc" id="L44" title="2 of 4 branches missed.">		assert stellarConfiguration != null;</span>
+<span class="pc bpc" id="L45" title="2 of 4 branches missed.">		assert planetNameSet != null;</span>
+<span class="fc" id="L46">	}</span>
+
+	@Override
+	public void parseConfiguration(String line) {
+<span class="fc" id="L50">		checkRep();</span>
+<span class="fc bfc" id="L51" title="All 2 branches covered.">		if (line.startsWith(&quot;Stellar ::= &lt;&quot;)) {</span>
+<span class="fc bfc" id="L52" title="All 2 branches covered.">			if (stellarConfiguration.getStellar() != null) {</span>
+<span class="fc" id="L53">				ConfigurationLabelException e = new ConfigurationLabelException(&quot;Duplicate Stellar label&quot;, lineNumber,</span>
+<span class="fc" id="L54">						file.getName());</span>
+<span class="fc" id="L55">				logger.error(&quot;Duplicate Stellar label&quot;, e);</span>
+<span class="fc" id="L56">				throw e;</span>
+			}
+<span class="fc" id="L58">			Pattern stellarPattern = Pattern.compile(</span>
+<span class="fc" id="L59">					&quot;(?&lt;=Stellar ::= &lt;)[A-Za-z0-9]+,((\\d+[\\.]?\\d*e\\d+)|(\\d+[\\.]?\\d*)),((\\d+[\\.]?\\d*e\\d+)|(\\d+[\\.]?\\d*))(?=&gt;)&quot;);</span>
+<span class="fc" id="L60">			Matcher stellarMatcher = stellarPattern.matcher(line);</span>
+<span class="fc bfc" id="L61" title="All 2 branches covered.">			if (stellarMatcher.find()) {</span>
+<span class="fc" id="L62">				logger.info(&quot;Stellar: {}&quot;, stellarMatcher.group());</span>
+<span class="fc" id="L63">				String[] splits = stellarMatcher.group().split(&quot;,&quot;);</span>
+<span class="fc" id="L64">				validateNumber(splits[1], lineNumber, file.getName());</span>
+<span class="fc" id="L65">				validateNumber(splits[2], lineNumber, file.getName());</span>
+<span class="fc" id="L66">				stellarConfiguration.setStellar(</span>
+<span class="fc" id="L67">						stellarFactory.build(splits[0], number2Double(splits[1]), number2Double(splits[2])));</span>
+<span class="fc" id="L68">			} else {</span>
+<span class="fc" id="L69">				ConfigurationSyntaxException e = new ConfigurationSyntaxException(&quot;Wrong format of stellar&quot;, lineNumber,</span>
+<span class="fc" id="L70">						file.getName());</span>
+<span class="fc" id="L71">				logger.error(&quot;Wrong format of stellar&quot;, e);</span>
+<span class="fc" id="L72">				throw e;</span>
+			}
+<span class="fc bfc" id="L74" title="All 2 branches covered.">		} else if (line.startsWith(&quot;Planet ::= &lt;&quot;)) {</span>
+<span class="fc" id="L75">			Pattern planetPattern = Pattern.compile(</span>
+<span class="fc" id="L76">					&quot;(?&lt;=Planet ::= &lt;)[A-Za-z0-9]+,[A-Za-z]+,[A-Za-z]+,(((\\d+[\\.]?\\d*e\\d+)|(\\d+[\\.]?\\d*)),){3}[A-Z]{2,3},\\d+[\\.]?\\d*(?=&gt;)&quot;);</span>
+<span class="fc" id="L77">			Matcher planetMatcher = planetPattern.matcher(line);</span>
+<span class="fc bfc" id="L78" title="All 2 branches covered.">			if (planetMatcher.find()) {</span>
+<span class="fc" id="L79">				String string = planetMatcher.group();</span>
+<span class="fc" id="L80">				logger.info(&quot;Planet: {}&quot;, string);</span>
+<span class="fc" id="L81">				String[] splits = string.split(&quot;,&quot;);</span>
+<span class="fc bfc" id="L82" title="All 2 branches covered.">				if (planetNameSet.contains(splits[0])) {</span>
+<span class="fc" id="L83">					ConfigurationLabelException e = new ConfigurationLabelException(&quot;Duplicate planet with same name&quot;,</span>
+<span class="fc" id="L84">							lineNumber, file.getName());</span>
+<span class="fc" id="L85">					logger.error(&quot;Duplicate planet with same name&quot;, e);</span>
+<span class="fc" id="L86">					throw e;</span>
+				} else {
+<span class="fc" id="L88">					planetNameSet.add(splits[0]);</span>
+				}
+<span class="fc" id="L90">				validateNumber(splits[3], lineNumber, file.getName());</span>
+<span class="fc" id="L91">				validateNumber(splits[4], lineNumber, file.getName());</span>
+<span class="fc" id="L92">				validateNumber(splits[5], lineNumber, file.getName());</span>
+<span class="pc bpc" id="L93" title="1 of 4 branches missed.">				if (!&quot;CW&quot;.equals(splits[6]) &amp;&amp; !&quot;CCW&quot;.equals(splits[6])) {</span>
+<span class="nc" id="L94">					ConfigurationSyntaxException e = new ConfigurationSyntaxException(&quot;Wrong rotation&quot;, lineNumber,</span>
+<span class="nc" id="L95">							file.getName());</span>
+<span class="nc" id="L96">					logger.error(&quot;Wrong rotation&quot;, e);</span>
+<span class="nc" id="L97">					throw e;</span>
+				}
+<span class="fc" id="L99">				double startAngle = number2Double(splits[7]);</span>
+<span class="pc bpc" id="L100" title="1 of 4 branches missed.">				if (startAngle &gt; 360 || startAngle &lt; 0) {</span>
+<span class="fc" id="L101">					ConfigurationSyntaxException e = new ConfigurationSyntaxException(&quot;Wrong start angle&quot;, lineNumber,</span>
+<span class="fc" id="L102">							file.getName());</span>
+<span class="fc" id="L103">					logger.error(&quot;Wrong start angle&quot;, e);</span>
+<span class="fc" id="L104">					throw e;</span>
+				}
+<span class="fc" id="L106">				stellarConfiguration.getPlanets()</span>
+<span class="fc" id="L107">						.add(planetFactory.build(splits[0], splits[1], splits[2], number2Double(splits[3]),</span>
+<span class="fc" id="L108">								number2Double(splits[4]),</span>
+<span class="fc" id="L109">								(number2Double(splits[5]) * 180) / (number2Double(splits[4]) * Math.PI),</span>
+<span class="fc" id="L110">								&quot;CW&quot;.equals(splits[6]), startAngle));</span>
+
+<span class="fc" id="L112">			} else {</span>
+<span class="fc" id="L113">				ConfigurationSyntaxException e = new ConfigurationSyntaxException(&quot;Wrong format of planet&quot;, lineNumber,</span>
+<span class="fc" id="L114">						file.getName());</span>
+<span class="fc" id="L115">				logger.error(&quot;Wrong format of planet&quot;, e);</span>
+<span class="fc" id="L116">				throw e;</span>
+			}
+		} else {
+<span class="fc" id="L119">			ConfigurationSyntaxException e = new ConfigurationSyntaxException(</span>
+<span class="fc" id="L120">					&quot;Invalid label '&quot; + line.substring(0, line.indexOf(&quot; &quot;)) + &quot;'&quot;, lineNumber, file.getName());</span>
+<span class="fc" id="L121">			logger.error(&quot;Invalid label '&quot; + line.substring(0, line.indexOf(&quot; &quot;)) + &quot;'&quot;, e);</span>
+<span class="fc" id="L122">			throw e;</span>
+		}
+<span class="fc" id="L124">	}</span>
+
+	/**
+	 * validate whether the number string is valid
+	 *
+	 * @param numberString the number string to be validated
+	 */
+	private void validateNumber(String numberString, long line, String fileName) {
+<span class="fc" id="L132">		checkRep();</span>
+<span class="fc" id="L133">		Double number = number2Double(numberString);</span>
+<span class="fc bfc" id="L134" title="All 2 branches covered.">		if (number &gt; 10000) {</span>
+<span class="fc bfc" id="L135" title="All 2 branches covered.">			if (!numberString.contains(&quot;e&quot;)) {</span>
+<span class="fc" id="L136">				throw new ConfigurationSyntaxException(&quot;Missing scientific notation&quot;, line, fileName);</span>
+			} else {
+<span class="fc" id="L138">				String[] strings = numberString.split(&quot;e&quot;);</span>
+<span class="fc" id="L139">				double coefficient = Double.valueOf(strings[0]);</span>
+<span class="pc bpc" id="L140" title="1 of 4 branches missed.">				if (coefficient &lt; 1 || coefficient &gt;= 10) {</span>
+<span class="fc" id="L141">					ConfigurationSyntaxException e = new ConfigurationSyntaxException(</span>
+<span class="fc" id="L142">							&quot;Wrong format for coefficient of scientific notation&quot;, lineNumber, file.getName());</span>
+<span class="fc" id="L143">					logger.error(&quot;Wrong format for coefficient of scientific notation&quot;, e);</span>
+<span class="fc" id="L144">					throw e;</span>
+<span class="pc bpc" id="L145" title="1 of 2 branches missed.">				} else if (strings[1].contains(&quot;.&quot;)) {</span>
+<span class="nc" id="L146">					ConfigurationSyntaxException e = new ConfigurationSyntaxException(</span>
+<span class="nc" id="L147">							&quot;Wrong format for power of scientific notation&quot;, lineNumber, file.getName());</span>
+<span class="nc" id="L148">					logger.error(&quot;Wrong format for power of scientific notation&quot;, e);</span>
+<span class="nc" id="L149">					throw e;</span>
+				} else {
+<span class="fc" id="L151">					int power = Integer.parseInt(strings[1]);</span>
+<span class="pc bpc" id="L152" title="1 of 2 branches missed.">					if (power &lt; 3) {</span>
+<span class="nc" id="L153">						ConfigurationSyntaxException e = new ConfigurationSyntaxException(</span>
+<span class="nc" id="L154">								&quot;Wrong power (&lt; 3) of scientific notation&quot;, lineNumber, file.getName());</span>
+<span class="nc" id="L155">						logger.error(&quot;Wrong power (&lt; 3) of scientific notation&quot;, e);</span>
+<span class="nc" id="L156">						throw e;</span>
+					}
+				}
+			}
+		} else {
+<span class="fc bfc" id="L161" title="All 2 branches covered.">			if (numberString.contains(&quot;e&quot;)) {</span>
+<span class="fc" id="L162">				ConfigurationSyntaxException e = new ConfigurationSyntaxException(&quot;Improper use of Scientific notation&quot;,</span>
+<span class="fc" id="L163">						lineNumber, file.getName());</span>
+<span class="fc" id="L164">				logger.error(&quot;Improper use of Scientific notation&quot;, e);</span>
+<span class="fc" id="L165">				throw e;</span>
+			}
+		}
+<span class="fc" id="L168">	}</span>
+
+	/**
+	 * convert the number string to double
+	 *
+	 * @param numberStr the number string to be converted
+	 * @return the double number
+	 */
+	private Double number2Double(String numberStr) {
+<span class="fc" id="L177">		checkRep();</span>
+<span class="fc bfc" id="L178" title="All 2 branches covered.">		if (!numberStr.contains(&quot;e&quot;)) {</span>
+<span class="fc" id="L179">			return Double.valueOf(numberStr);</span>
+		} else {
+<span class="fc" id="L181">			BigDecimal bd = new BigDecimal(numberStr);</span>
+<span class="fc" id="L182">			return bd.doubleValue();</span>
+		}
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span>SC_Lab4_Cover (May 17, 2019 11:39:10 AM)</div></body></html>

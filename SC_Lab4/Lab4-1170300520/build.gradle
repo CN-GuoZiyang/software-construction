@@ -1,0 +1,25 @@
+apply plugin: 'java'
+
+sourceSets {
+    main {
+        java.srcDirs = ['src']
+        resources.srcDirs = ['src']
+    }
+    test {
+        java.srcDirs = ['test']
+        resources.srcDirs = ['test']
+    }
+}
+
+test {
+    include '**/**.class'
+    exclude '**/CircularOrbitHelperTest.class'
+}
+
+dependencies {
+    compile fileTree(dir: 'lib', includes: ['*.jar'])
+}
+
+task update(type: Wrapper) {
+    gradleVersion = '5.3'
+}

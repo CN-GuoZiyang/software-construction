@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>FindMediumSortedArraysTest.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">SC_Lab4_Cover (May 17, 2019 11:39:10 AM)</a> &gt; <a href="../../index.html" class="el_group">SC_Lab4_Cover</a> &gt; <a href="../index.html" class="el_bundle">test</a> &gt; <a href="index.source.html" class="el_package">debug</a> &gt; <span class="el_source">FindMediumSortedArraysTest.java</span></div><h1>FindMediumSortedArraysTest.java</h1><pre class="source lang-java linenums">package debug;
+
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
+<span class="fc" id="L7">public class FindMediumSortedArraysTest {</span>
+
+<span class="fc" id="L9">	public FindMedianSortedArrays findMedianSortedArrays = new FindMedianSortedArrays();</span>
+
+	@Test
+	public void findMedianSortedArraysTest() {
+<span class="fc" id="L13">		int[] nums1 = { 1, 3 };</span>
+<span class="fc" id="L14">		int[] nums2 = { 2 };</span>
+<span class="fc" id="L15">		assertEquals(2.0, findMedianSortedArrays.findMedianSortedArrays(nums1, nums2), 0.001);</span>
+<span class="fc" id="L16">		int[] nums3 = { 1, 2 };</span>
+<span class="fc" id="L17">		int[] nums4 = { 3, 4 };</span>
+<span class="fc" id="L18">		assertEquals(2.5, findMedianSortedArrays.findMedianSortedArrays(nums3, nums4), 0.001);</span>
+<span class="fc" id="L19">		int[] nums5 = { 1, 1, 1 };</span>
+<span class="fc" id="L20">		int[] nums6 = { 5, 6, 7 };</span>
+<span class="fc" id="L21">		assertEquals(3.0, findMedianSortedArrays.findMedianSortedArrays(nums5, nums6), 0.001);</span>
+<span class="fc" id="L22">		int[] nums7 = { 1, 1 };</span>
+<span class="fc" id="L23">		int[] nums8 = { 1, 2, 3 };</span>
+<span class="fc" id="L24">		assertEquals(1.0, findMedianSortedArrays.findMedianSortedArrays(nums7, nums8), 0.001);</span>
+<span class="fc" id="L25">		int[] nums9 = {};</span>
+<span class="fc" id="L26">		int[] nums10 = { 1, 3, 5 };</span>
+<span class="fc" id="L27">		assertEquals(3.0, findMedianSortedArrays.findMedianSortedArrays(nums9, nums10), 0.001);</span>
+
+<span class="fc" id="L29">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span>SC_Lab4_Cover (May 17, 2019 11:39:10 AM)</div></body></html>

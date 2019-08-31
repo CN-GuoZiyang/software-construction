@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>AppConfiguration.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">SC_Lab4_Cover (May 17, 2019 11:39:10 AM)</a> &gt; <a href="../../index.html" class="el_group">SC_Lab4_Cover</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">configuration</a> &gt; <span class="el_source">AppConfiguration.java</span></div><h1>AppConfiguration.java</h1><pre class="source lang-java linenums">package configuration;
+
+import centralObject.User;
+import otherBean.InstallLog;
+import otherBean.Relation;
+import otherBean.UninstallLog;
+import otherBean.UsageLog;
+import physicalObject.App;
+
+import java.util.HashSet;
+import java.util.Set;
+
+/**
+ * the configuration object of the app ecosystem
+ *
+ * @author Guo Ziyang
+ */
+public class AppConfiguration implements Configuration {
+
+	/**
+	 * the configuration is divided by hour
+	 */
+	public static final int HOUR = 1;
+	/**
+	 * the configuration is divided by day
+	 */
+	public static final int DAY = 2;
+	/**
+	 * the configuration is divided by week
+	 */
+	public static final int WEEK = 3;
+	/**
+	 * the configuration is divided by month
+	 */
+	public static final int MONTH = 4;
+
+	private User user;
+	private Set&lt;App&gt; apps;
+	private Set&lt;InstallLog&gt; installLogs;
+	private Set&lt;UninstallLog&gt; uninstallLogs;
+	private Set&lt;UsageLog&gt; usageLogs;
+	private Set&lt;Relation&gt; relations;
+	private int period;
+
+<span class="fc" id="L45">	public AppConfiguration() {</span>
+<span class="fc" id="L46">		apps = new HashSet&lt;&gt;();</span>
+<span class="fc" id="L47">		installLogs = new HashSet&lt;&gt;();</span>
+<span class="fc" id="L48">		uninstallLogs = new HashSet&lt;&gt;();</span>
+<span class="fc" id="L49">		usageLogs = new HashSet&lt;&gt;();</span>
+<span class="fc" id="L50">		relations = new HashSet&lt;&gt;();</span>
+<span class="fc" id="L51">	}</span>
+
+	/**
+	 * get the user
+	 *
+	 * @return the user
+	 */
+	public User getUser() {
+<span class="fc" id="L59">		return user;</span>
+	}
+
+	/**
+	 * set the user
+	 *
+	 * @param user the user
+	 */
+	public void setUser(User user) {
+<span class="fc" id="L68">		this.user = user;</span>
+<span class="fc" id="L69">	}</span>
+
+	/**
+	 * add a app to the app list
+	 *
+	 * @param app app to be added
+	 */
+	public void addApps(App app) {
+<span class="fc" id="L77">		apps.add(app);</span>
+<span class="fc" id="L78">	}</span>
+
+	/**
+	 * add an installlog
+	 *
+	 * @param installLog installlog to be added
+	 */
+	public void addInstallLog(InstallLog installLog) {
+<span class="fc" id="L86">		installLogs.add(installLog);</span>
+<span class="fc" id="L87">	}</span>
+
+	/**
+	 * add an uninstalllog
+	 *
+	 * @param uninstallLog uninstalllog to be added
+	 */
+	public void addUninstallLog(UninstallLog uninstallLog) {
+<span class="fc" id="L95">		uninstallLogs.add(uninstallLog);</span>
+<span class="fc" id="L96">	}</span>
+
+	/**
+	 * add a usage log
+	 *
+	 * @param usageLog usage log to be added
+	 */
+	public void addUsageLog(UsageLog usageLog) {
+<span class="fc" id="L104">		usageLogs.add(usageLog);</span>
+<span class="fc" id="L105">	}</span>
+
+	/**
+	 * add a relation between apps
+	 *
+	 * @param relation relation to be added
+	 */
+	public void addRelations(Relation relation) {
+<span class="fc" id="L113">		relations.add(relation);</span>
+<span class="fc" id="L114">	}</span>
+
+	/**
+	 * get the way the configuration is divided
+	 *
+	 * @return the way the configuration is divided
+	 */
+	public int getPeriod() {
+<span class="fc" id="L122">		return period;</span>
+	}
+
+	/**
+	 * set the way the configuration is divided
+	 *
+	 * @param period the way the configuration is divided
+	 */
+	public void setPeriod(int period) {
+<span class="fc" id="L131">		this.period = period;</span>
+<span class="fc" id="L132">	}</span>
+
+	/**
+	 * @return the apps
+	 */
+	public Set&lt;App&gt; getApps() {
+<span class="fc" id="L138">		return apps;</span>
+	}
+
+	/**
+	 * @return the installLogs
+	 */
+	public Set&lt;InstallLog&gt; getInstallLogs() {
+<span class="fc" id="L145">		return installLogs;</span>
+	}
+
+	/**
+	 * @return the uninstallLogs
+	 */
+	public Set&lt;UninstallLog&gt; getUninstallLogs() {
+<span class="fc" id="L152">		return uninstallLogs;</span>
+	}
+
+	/**
+	 * @return the usageLogs
+	 */
+	public Set&lt;UsageLog&gt; getUsageLogs() {
+<span class="fc" id="L159">		return usageLogs;</span>
+	}
+
+	/**
+	 * @return the relations
+	 */
+	public Set&lt;Relation&gt; getRelations() {
+<span class="fc" id="L166">		return relations;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span>SC_Lab4_Cover (May 17, 2019 11:39:10 AM)</div></body></html>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>StellarSystem.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">SC_Lab4_Cover (May 17, 2019 11:39:10 AM)</a> &gt; <a href="../../index.html" class="el_group">SC_Lab4_Cover</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">circularOrbit</a> &gt; <span class="el_source">StellarSystem.java</span></div><h1>StellarSystem.java</h1><pre class="source lang-java linenums">package circularOrbit;
+
+import centralObject.Stellar;
+import configuration.StellarConfiguration;
+import configuration.StellarConfigurationReader;
+import physicalObject.Planet;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Set;
+
+/**
+ * the implement of a stellar system consisting of a stellar and many planets
+ *
+ * @author Guo Ziyang
+ */
+public class StellarSystem extends OrbitWithPosition&lt;Stellar, Planet&gt; {
+
+	public StellarSystem(File file) throws IOException {
+<span class="fc" id="L20">		super();</span>
+<span class="fc" id="L21">		readFromFile(file);</span>
+<span class="fc" id="L22">	}</span>
+
+	@Override
+	public void readFromFile(File file) throws IOException {
+<span class="fc" id="L26">		super.checkRep();</span>
+<span class="fc" id="L27">		StellarConfigurationReader reader = new StellarConfigurationReader(file);</span>
+<span class="fc" id="L28">		StellarConfiguration configuration = (StellarConfiguration) reader.readFile();</span>
+<span class="fc" id="L29">		addCentralObject(configuration.getStellar());</span>
+<span class="fc" id="L30">		Set&lt;Planet&gt; planets = configuration.getPlanets();</span>
+<span class="fc bfc" id="L31" title="All 2 branches covered.">		for (Planet planet : planets) {</span>
+<span class="pc bpc" id="L32" title="1 of 2 branches missed.">			if (getTrack(planet.getTrackRadius()) == null) {</span>
+<span class="fc" id="L33">				addTrack(planet.getTrackRadius());</span>
+			}
+<span class="fc" id="L35">			addPhysicalObject(planet, planet.getTrackRadius(), planet.getStartAngle());</span>
+		}
+<span class="fc" id="L37">	}</span>
+
+	@Override
+	public Planet getObject(String name) {
+<span class="fc" id="L41">		super.checkRep();</span>
+<span class="pc bpc" id="L42" title="1 of 2 branches missed.">		for (Planet planet : getPhysicalObjects()) {</span>
+<span class="fc bfc" id="L43" title="All 2 branches covered.">			if (name.equals(planet.getName())) {</span>
+<span class="fc" id="L44">				return planet;</span>
+			}
+		}
+<span class="nc" id="L47">		return null;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span>SC_Lab4_Cover (May 17, 2019 11:39:10 AM)</div></body></html>

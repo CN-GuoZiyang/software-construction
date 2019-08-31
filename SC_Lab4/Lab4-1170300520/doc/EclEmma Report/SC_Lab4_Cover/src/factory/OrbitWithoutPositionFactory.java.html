@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>OrbitWithoutPositionFactory.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">SC_Lab4_Cover (May 17, 2019 11:39:10 AM)</a> &gt; <a href="../../index.html" class="el_group">SC_Lab4_Cover</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">factory</a> &gt; <span class="el_source">OrbitWithoutPositionFactory.java</span></div><h1>OrbitWithoutPositionFactory.java</h1><pre class="source lang-java linenums">package factory;
+
+import circularOrbit.AtomStructure;
+import circularOrbit.PersonalAppEcosystem;
+import configuration.AppConfiguration;
+import configuration.AppConfigurationReader;
+import configuration.Exception.ConfigurationDependencyException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import otherBean.InstallLog;
+import otherBean.TimeLog;
+import otherBean.UninstallLog;
+import otherBean.UsageLog;
+import physicalObject.App;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.*;
+
+/**
+ * the factory building the non-position-sensitive circular orbit
+ *
+ * @author Guo Ziyang
+ */
+<span class="pc bpc" id="L25" title="1 of 2 branches missed.">public class OrbitWithoutPositionFactory {</span>
+
+<span class="fc" id="L27">	private Logger logger = LoggerFactory.getLogger(OrbitWithoutPositionFactory.class);</span>
+
+	/**
+	 * build an atom structure using a name
+	 *
+	 * @param name the name of the atom
+	 * @return the atom structure object
+	 */
+	public AtomStructure buildAtomStructure(String name) {
+<span class="fc" id="L36">		logger.info(&quot;build a AtomStructure with name {}&quot;, name);</span>
+<span class="fc" id="L37">		return new AtomStructure(name);</span>
+	}
+
+	/**
+	 * build an atom structure via the configuration file
+	 *
+	 * @param file the configuration file
+	 * @return the atom structure object
+	 */
+	public AtomStructure buildAtomStructure(File file) throws IOException {
+<span class="fc" id="L47">		logger.info(&quot;build a AtomStructure with file {}&quot;, file.getAbsolutePath());</span>
+<span class="fc" id="L48">		return new AtomStructure(file);</span>
+	}
+
+	/**
+	 * build a personal app ecosystem via configuration file
+	 *
+	 * @param file the configuration file
+	 */
+	public void buildPersonalAppEcosystem(File file) throws IOException {
+<span class="fc" id="L57">		AppConfigurationReader reader = new AppConfigurationReader(file);</span>
+<span class="fc" id="L58">		AppConfiguration appConfiguration = (AppConfiguration) reader.readFile();</span>
+<span class="fc" id="L59">		Calendar earliestTime = null;</span>
+<span class="fc" id="L60">		Calendar latestTime = null;</span>
+<span class="pc bpc" id="L61" title="1 of 2 branches missed.">		for (UsageLog usageLog : appConfiguration.getUsageLogs()) {</span>
+<span class="pc bpc" id="L62" title="1 of 2 branches missed.">			if (usageLog != null) {</span>
+<span class="fc" id="L63">				earliestTime = usageLog.getTime();</span>
+<span class="fc" id="L64">				latestTime = usageLog.getTime();</span>
+<span class="fc" id="L65">				break;</span>
+			}
+		}
+<span class="fc bfc" id="L68" title="All 2 branches covered.">		for (InstallLog installLog : appConfiguration.getInstallLogs()) {</span>
+<span class="fc bfc" id="L69" title="All 2 branches covered.">			if (installLog.getTime().before(earliestTime)) {</span>
+<span class="fc" id="L70">				earliestTime = installLog.getTime();</span>
+			}
+<span class="fc bfc" id="L72" title="All 2 branches covered.">			if (installLog.getTime().after(latestTime)) {</span>
+<span class="fc" id="L73">				latestTime = installLog.getTime();</span>
+			}
+		}
+<span class="fc bfc" id="L76" title="All 2 branches covered.">		for (UsageLog usageLog : appConfiguration.getUsageLogs()) {</span>
+<span class="pc bpc" id="L77" title="1 of 2 branches missed.">			if (usageLog.getTime().before(earliestTime)) {</span>
+<span class="nc" id="L78">				earliestTime = usageLog.getTime();</span>
+			}
+<span class="fc bfc" id="L80" title="All 2 branches covered.">			if (usageLog.getTime().after(latestTime)) {</span>
+<span class="fc" id="L81">				latestTime = usageLog.getTime();</span>
+			}
+		}
+<span class="fc bfc" id="L84" title="All 2 branches covered.">		for (UninstallLog uninstallLog : appConfiguration.getUninstallLogs()) {</span>
+<span class="pc bpc" id="L85" title="1 of 2 branches missed.">			if (uninstallLog.getTime().before(earliestTime)) {</span>
+<span class="nc" id="L86">				earliestTime = uninstallLog.getTime();</span>
+			}
+<span class="pc bpc" id="L88" title="1 of 2 branches missed.">			if (uninstallLog.getTime().after(latestTime)) {</span>
+<span class="nc" id="L89">				latestTime = uninstallLog.getTime();</span>
+			}
+		}
+<span class="fc" id="L92">		PersonalAppEcosystem.ecosystems.clear();</span>
+<span class="fc" id="L93">		Map&lt;String, App&gt; appNameMap = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L94">		Map&lt;String, Boolean&gt; uninstalled = new HashMap&lt;&gt;();</span>
+<span class="fc bfc" id="L95" title="All 2 branches covered.">		for (App app : appConfiguration.getApps()) {</span>
+<span class="fc" id="L96">			appNameMap.put(app.getName(), app);</span>
+<span class="fc" id="L97">			uninstalled.put(app.getName(), false);</span>
+		}
+<span class="fc" id="L99">		List&lt;AppConfiguration&gt; configurations = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L100">		Set&lt;App&gt; currentApps = new HashSet&lt;&gt;();</span>
+<span class="fc" id="L101">		List&lt;Calendar&gt; timeList = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L102">		Map&lt;Calendar, List&lt;TimeLog&gt;&gt; timeLogs = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L103">		Calendar start = earliestTime;</span>
+		do {
+<span class="pc bpc" id="L105" title="2 of 4 branches missed.">			assert start != null;</span>
+<span class="fc" id="L106">			Calendar current = (Calendar) start.clone();</span>
+<span class="fc" id="L107">			timeLogs.put(current, new ArrayList&lt;&gt;());</span>
+<span class="pc bpc" id="L108" title="4 of 5 branches missed.">			switch (appConfiguration.getPeriod()) {</span>
+			case AppConfiguration.HOUR:
+<span class="nc" id="L110">				start.add(Calendar.HOUR, 1);</span>
+<span class="nc" id="L111">				break;</span>
+			case AppConfiguration.DAY:
+<span class="fc" id="L113">				start.add(Calendar.DATE, 1);</span>
+<span class="fc" id="L114">				break;</span>
+			case AppConfiguration.WEEK:
+<span class="nc" id="L116">				start.add(Calendar.DATE, 7);</span>
+<span class="nc" id="L117">				break;</span>
+			case AppConfiguration.MONTH:
+<span class="nc" id="L119">				start.add(Calendar.MONTH, 1);</span>
+<span class="nc" id="L120">				break;</span>
+			default:
+<span class="nc" id="L122">				logger.error(&quot;Unknown error occors!&quot;, new RuntimeException());</span>
+			}
+<span class="fc" id="L124">			timeList.add(current);</span>
+<span class="fc bfc" id="L125" title="All 2 branches covered.">		} while (!start.after(latestTime));</span>
+<span class="fc bfc" id="L126" title="All 2 branches covered.">		for (InstallLog installLog : appConfiguration.getInstallLogs()) {</span>
+<span class="fc" id="L127">			boolean done = false;</span>
+<span class="fc bfc" id="L128" title="All 2 branches covered.">			for (int i = 0; i &lt; timeList.size(); i++) {</span>
+<span class="fc bfc" id="L129" title="All 2 branches covered.">				if (timeList.get(i).after(installLog.getTime())) {</span>
+<span class="fc" id="L130">					timeLogs.get(timeList.get(i - 1)).add(installLog);</span>
+<span class="fc" id="L131">					done = true;</span>
+<span class="fc" id="L132">					break;</span>
+				}
+			}
+<span class="fc bfc" id="L135" title="All 2 branches covered.">			if (!done) {</span>
+<span class="fc" id="L136">				timeLogs.get(timeList.get(timeList.size() - 1)).add(installLog);</span>
+			}
+		}
+<span class="fc bfc" id="L139" title="All 2 branches covered.">		for (UsageLog usageLog : appConfiguration.getUsageLogs()) {</span>
+<span class="fc" id="L140">			boolean done = false;</span>
+<span class="fc bfc" id="L141" title="All 2 branches covered.">			for (int i = 0; i &lt; timeList.size(); i++) {</span>
+<span class="fc bfc" id="L142" title="All 2 branches covered.">				if (timeList.get(i).after(usageLog.getTime())) {</span>
+<span class="fc" id="L143">					timeLogs.get(timeList.get(i - 1)).add(usageLog);</span>
+<span class="fc" id="L144">					done = true;</span>
+<span class="fc" id="L145">					break;</span>
+				}
+			}
+<span class="fc bfc" id="L148" title="All 2 branches covered.">			if (!done) {</span>
+<span class="fc" id="L149">				timeLogs.get(timeList.get(timeList.size() - 1)).add(usageLog);</span>
+			}
+		}
+<span class="fc bfc" id="L152" title="All 2 branches covered.">		for (UninstallLog uninstallLog : appConfiguration.getUninstallLogs()) {</span>
+<span class="fc" id="L153">			boolean done = false;</span>
+<span class="fc bfc" id="L154" title="All 2 branches covered.">			for (int i = 0; i &lt; timeList.size(); i++) {</span>
+<span class="fc bfc" id="L155" title="All 2 branches covered.">				if (timeList.get(i).after(uninstallLog.getTime())) {</span>
+<span class="fc" id="L156">					timeLogs.get(timeList.get(i - 1)).add(uninstallLog);</span>
+<span class="fc" id="L157">					done = true;</span>
+<span class="fc" id="L158">					break;</span>
+				}
+			}
+<span class="fc bfc" id="L161" title="All 2 branches covered.">			if (!done) {</span>
+<span class="fc" id="L162">				timeLogs.get(timeList.get(timeList.size() - 1)).add(uninstallLog);</span>
+			}
+		}
+<span class="fc bfc" id="L165" title="All 2 branches covered.">		for (Map.Entry&lt;Calendar, List&lt;TimeLog&gt;&gt; entry : timeLogs.entrySet()) {</span>
+<span class="fc" id="L166">			List&lt;TimeLog&gt; list = entry.getValue();</span>
+<span class="fc" id="L167">			list.sort((o1, o2) -&gt; {</span>
+<span class="fc bfc" id="L168" title="All 2 branches covered.">				if (o1.getTime().before(o2.getTime())) {</span>
+<span class="fc" id="L169">					return -1;</span>
+<span class="pc bpc" id="L170" title="1 of 2 branches missed.">				} else if (o1.getTime().after(o2.getTime())) {</span>
+<span class="fc" id="L171">					return 1;</span>
+				} else {
+<span class="nc" id="L173">					return 0;</span>
+				}
+			});
+		}
+<span class="fc" id="L177">		List&lt;Map.Entry&lt;Calendar, List&lt;TimeLog&gt;&gt;&gt; entryList = new ArrayList&lt;&gt;(timeLogs.entrySet());</span>
+<span class="fc" id="L178">		entryList.sort((o1, o2) -&gt; {</span>
+<span class="pc bpc" id="L179" title="1 of 2 branches missed.">			if (o1.getKey().before(o2.getKey())) {</span>
+<span class="nc" id="L180">				return -1;</span>
+<span class="pc bpc" id="L181" title="1 of 2 branches missed.">			} else if (o1.getKey().after(o2.getKey())) {</span>
+<span class="fc" id="L182">				return 1;</span>
+			} else {
+<span class="nc" id="L184">				return 0;</span>
+			}
+		});
+<span class="fc bfc" id="L187" title="All 2 branches covered.">		for (Map.Entry&lt;Calendar, List&lt;TimeLog&gt;&gt; entry : entryList) {</span>
+<span class="fc" id="L188">			AppConfiguration configuration = new AppConfiguration();</span>
+<span class="fc" id="L189">			configuration.setUser(appConfiguration.getUser());</span>
+<span class="fc" id="L190">			configuration.getRelations().addAll(appConfiguration.getRelations());</span>
+<span class="fc" id="L191">			List&lt;TimeLog&gt; timeLogList = entry.getValue();</span>
+<span class="fc" id="L192">			Set&lt;App&gt; appToRemove = new HashSet&lt;&gt;();</span>
+<span class="fc bfc" id="L193" title="All 2 branches covered.">			for (TimeLog timeLog : timeLogList) {</span>
+<span class="fc bfc" id="L194" title="All 2 branches covered.">				if (timeLog instanceof InstallLog) {</span>
+<span class="fc" id="L195">					configuration.addInstallLog((InstallLog) timeLog);</span>
+<span class="fc" id="L196">					currentApps.add(appNameMap.get(((InstallLog) timeLog).getName()));</span>
+<span class="fc" id="L197">					uninstalled.put(((InstallLog) timeLog).getName(), false);</span>
+<span class="fc bfc" id="L198" title="All 2 branches covered.">				} else if (timeLog instanceof UsageLog) {</span>
+<span class="pc bpc" id="L199" title="1 of 2 branches missed.">					if (uninstalled.get(((UsageLog) timeLog).getName())) {</span>
+<span class="nc" id="L200">						throw new ConfigurationDependencyException(</span>
+<span class="nc" id="L201">								&quot;App '&quot; + ((UsageLog) timeLog).getName() + &quot;' does not exist&quot;, null, null);</span>
+					}
+<span class="fc" id="L203">					configuration.addUsageLog((UsageLog) timeLog);</span>
+<span class="fc" id="L204">					currentApps.add(appNameMap.get(((UsageLog) timeLog).getName()));</span>
+<span class="fc" id="L205">				} else {</span>
+<span class="fc" id="L206">					configuration.addUninstallLog((UninstallLog) timeLog);</span>
+<span class="fc" id="L207">					appToRemove.add(appNameMap.get(((UninstallLog) timeLog).getName()));</span>
+<span class="fc" id="L208">					uninstalled.put(((UninstallLog) timeLog).getName(), true);</span>
+				}
+			}
+<span class="fc" id="L211">			configuration.getApps().addAll(new HashSet&lt;&gt;(currentApps));</span>
+<span class="fc" id="L212">			configurations.add(configuration);</span>
+<span class="fc" id="L213">			currentApps.removeAll(appToRemove);</span>
+		}
+<span class="fc bfc" id="L215" title="All 2 branches covered.">		for (AppConfiguration configuration : configurations) {</span>
+<span class="fc" id="L216">			PersonalAppEcosystem appEcosystem = new PersonalAppEcosystem();</span>
+<span class="fc" id="L217">			appEcosystem.buildFromConfiguration(configuration);</span>
+<span class="fc" id="L218">			PersonalAppEcosystem.ecosystems.add(appEcosystem);</span>
+		}
+
+<span class="fc" id="L221">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span>SC_Lab4_Cover (May 17, 2019 11:39:10 AM)</div></body></html>

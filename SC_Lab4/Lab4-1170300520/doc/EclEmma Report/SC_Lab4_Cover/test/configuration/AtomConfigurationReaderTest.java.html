@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>AtomConfigurationReaderTest.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">SC_Lab4_Cover (May 17, 2019 11:39:10 AM)</a> &gt; <a href="../../index.html" class="el_group">SC_Lab4_Cover</a> &gt; <a href="../index.html" class="el_bundle">test</a> &gt; <a href="index.source.html" class="el_package">configuration</a> &gt; <span class="el_source">AtomConfigurationReaderTest.java</span></div><h1>AtomConfigurationReaderTest.java</h1><pre class="source lang-java linenums">package configuration;
+
+import APIs.CircularOrbitHelper;
+import circularOrbit.AtomStructure;
+import factory.OrbitWithoutPositionFactory;
+import org.junit.Test;
+
+import java.io.File;
+import java.io.IOException;
+
+<span class="fc" id="L11">public class AtomConfigurationReaderTest {</span>
+
+	@Test
+	public void readFileTest() throws IOException {
+<span class="fc" id="L15">		AtomConfigurationReader reader = new AtomConfigurationReader(</span>
+<span class="fc" id="L16">				new File(&quot;src/applications/configurations/AtomicStructure.txt&quot;));</span>
+<span class="fc" id="L17">		reader.readFile();</span>
+<span class="fc" id="L18">	}</span>
+
+	public static void main(String[] args) throws IOException {
+<span class="nc" id="L21">		OrbitWithoutPositionFactory factory = new OrbitWithoutPositionFactory();</span>
+<span class="nc" id="L22">		AtomStructure atomStructure = factory</span>
+<span class="nc" id="L23">				.buildAtomStructure(new File(&quot;src/applications/configurations/AtomicStructure.txt&quot;));</span>
+<span class="nc" id="L24">		CircularOrbitHelper.visualize(atomStructure);</span>
+<span class="nc" id="L25">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span>SC_Lab4_Cover (May 17, 2019 11:39:10 AM)</div></body></html>

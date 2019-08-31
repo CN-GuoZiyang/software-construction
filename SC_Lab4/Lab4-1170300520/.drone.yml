@@ -1,0 +1,9 @@
+clone:
+  git:
+    image: plugins/git
+
+pipeline:
+  build:
+    image: openjdk:11.0.3-jdk-stretch
+    commands:
+      - ./gradlew build

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>AtomStructure.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">SC_Lab4_Cover (May 17, 2019 11:39:10 AM)</a> &gt; <a href="../../index.html" class="el_group">SC_Lab4_Cover</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">circularOrbit</a> &gt; <span class="el_source">AtomStructure.java</span></div><h1>AtomStructure.java</h1><pre class="source lang-java linenums">package circularOrbit;
+
+import centralObject.AtomicNucleus;
+import configuration.AtomConfiguration;
+import configuration.AtomConfigurationReader;
+import factory.AtomicNucleusFactory;
+import factory.ElectronFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import physicalObject.Electron;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Map;
+
+/**
+ * the implement of an atom structure consisting of an atomic nucleus and some
+ * electrons around the core
+ *
+ * @author Guo Ziyang
+ */
+public class AtomStructure extends OrbitWithoutPosition&lt;AtomicNucleus, Electron&gt; {
+
+	private String elementName;
+
+	private AtomicNucleusFactory centralObjectFactory;
+
+	private ElectronFactory electronFactory;
+
+<span class="fc" id="L30">	private Logger logger = LoggerFactory.getLogger(AtomStructure.class);</span>
+
+	public AtomStructure(String elementName) {
+<span class="fc" id="L33">		super();</span>
+<span class="fc" id="L34">		this.elementName = elementName;</span>
+<span class="fc" id="L35">		centralObjectFactory = new AtomicNucleusFactory();</span>
+<span class="fc" id="L36">		addCentralObject(centralObjectFactory.build(elementName));</span>
+<span class="fc" id="L37">		electronFactory = new ElectronFactory();</span>
+<span class="fc" id="L38">	}</span>
+
+	public AtomStructure(File file) throws IOException {
+<span class="fc" id="L41">		super();</span>
+<span class="fc" id="L42">		centralObjectFactory = new AtomicNucleusFactory();</span>
+<span class="fc" id="L43">		electronFactory = new ElectronFactory();</span>
+<span class="fc" id="L44">		readFromFile(file);</span>
+<span class="fc" id="L45">	}</span>
+
+	@Override
+	public void readFromFile(File file) throws IOException {
+<span class="fc" id="L49">		super.checkRep();</span>
+<span class="fc" id="L50">		logger.info(&quot;Start read from configuration file {}&quot;, file.getName());</span>
+<span class="fc" id="L51">		AtomConfigurationReader reader = new AtomConfigurationReader(file);</span>
+<span class="fc" id="L52">		AtomConfiguration configuration = reader.readFile();</span>
+<span class="fc" id="L53">		elementName = configuration.getElementName();</span>
+<span class="fc" id="L54">		addCentralObject(centralObjectFactory.build(elementName));</span>
+<span class="fc" id="L55">		Integer numberOfTracks = configuration.getNumberOfTracks();</span>
+<span class="fc bfc" id="L56" title="All 2 branches covered.">		for (int i = 1; i &lt;= numberOfTracks; i++) {</span>
+<span class="fc" id="L57">			addTrack((double) i);</span>
+		}
+<span class="fc" id="L59">		Map&lt;Integer, Integer&gt; numberOfElectron = configuration.getNumberOfElectron();</span>
+<span class="fc bfc" id="L60" title="All 2 branches covered.">		for (Map.Entry&lt;Integer, Integer&gt; entry : numberOfElectron.entrySet()) {</span>
+<span class="fc bfc" id="L61" title="All 2 branches covered.">			for (int i = 0; i &lt; entry.getValue(); i++) {</span>
+<span class="fc" id="L62">				addPhysicalObject(electronFactory.build(), Double.valueOf(entry.getKey()));</span>
+			}
+		}
+<span class="fc" id="L65">		logger.info(&quot;successfully build from configuration&quot;);</span>
+<span class="fc" id="L66">	}</span>
+
+	/**
+	 * get the name of the element
+	 *
+	 * @return the element's name
+	 */
+	public String getElementName() {
+<span class="nc" id="L74">		super.checkRep();</span>
+<span class="nc" id="L75">		return elementName;</span>
+	}
+
+	@Override
+	public Electron getObject(String name) {
+<span class="nc" id="L80">		super.checkRep();</span>
+<span class="nc" id="L81">		logger.warn(&quot;Cannot invoke method getObject in Atomic Structure&quot;);</span>
+<span class="nc" id="L82">		return null;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span>SC_Lab4_Cover (May 17, 2019 11:39:10 AM)</div></body></html>

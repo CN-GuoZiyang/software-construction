@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>LogReader.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">SC_Lab4_Cover (May 17, 2019 11:39:10 AM)</a> &gt; <a href="../../index.html" class="el_group">SC_Lab4_Cover</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">applications</a> &gt; <span class="el_source">LogReader.java</span></div><h1>LogReader.java</h1><pre class="source lang-java linenums">package applications;
+
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Appender;
+import org.apache.logging.log4j.core.LoggerContext;
+import org.apache.logging.log4j.core.appender.FileAppender;
+import org.apache.logging.log4j.core.layout.PatternLayout;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.*;
+import java.nio.charset.Charset;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.regex.Pattern;
+
+<span class="nc" id="L19">public class LogReader {</span>
+<span class="fc" id="L20">	private static long lastTimeFileSize = 0; // 上次文件大小</span>
+<span class="fc" id="L21">	private static final Logger logger = LoggerFactory.getLogger(LogReader.class);</span>
+
+<span class="fc" id="L23">	private static StringBuilder logBuilder = new StringBuilder();</span>
+
+	private static String logFileName;
+
+	static {
+<span class="fc" id="L28">		createAppender();</span>
+<span class="fc" id="L29">	}</span>
+
+	public static void readLog() {
+<span class="fc" id="L32">		File logFile = new File(logFileName);</span>
+<span class="fc" id="L33">		logger.info(&quot;start update file {}&quot;, logFileName);</span>
+		try {
+<span class="fc" id="L35">			long len = logFile.length();</span>
+<span class="pc bpc" id="L36" title="1 of 2 branches missed.">			if (len &lt; lastTimeFileSize) {</span>
+<span class="nc" id="L37">				logger.info(&quot;Log file was reset. Restarting logging from start of file.&quot;);</span>
+<span class="nc" id="L38">				lastTimeFileSize = 0;</span>
+<span class="nc" id="L39">			} else {</span>
+<span class="fc" id="L40">				RandomAccessFile randomFile = new RandomAccessFile(logFile, &quot;rw&quot;);</span>
+<span class="fc" id="L41">				randomFile.seek(lastTimeFileSize);</span>
+				String tmp;
+<span class="fc bfc" id="L43" title="All 2 branches covered.">				while ((tmp = randomFile.readLine()) != null) {</span>
+<span class="fc" id="L44">					logBuilder.append(tmp).append(&quot;\n&quot;);</span>
+				}
+<span class="fc" id="L46">				lastTimeFileSize = randomFile.length();</span>
+<span class="fc" id="L47">				randomFile.close();</span>
+			}
+<span class="pc" id="L49">		} catch (Exception e) {</span>
+<span class="nc" id="L50">			SimpleDateFormat dateFormat = new SimpleDateFormat(&quot;yyy-MM-dd HH:mm:ss&quot;);</span>
+<span class="nc" id="L51">			logger.error(dateFormat.format(new Date()) + &quot; File read error, lastTimeFileSize: &quot; + lastTimeFileSize);</span>
+		}
+<span class="fc" id="L53">	}</span>
+
+	public static void createAppender() {
+<span class="fc" id="L56">		LoggerContext ctx = (LoggerContext) LogManager.getContext(false);</span>
+<span class="fc" id="L57">		org.apache.logging.log4j.core.config.Configuration config = ctx.getConfiguration();</span>
+<span class="fc" id="L58">		PatternLayout layout = PatternLayout.newBuilder().withCharset(Charset.forName(&quot;UTF-8&quot;))</span>
+<span class="fc" id="L59">				.withPattern(&quot;%d{yyyy-MM-dd} %d{HH:mm:ss} %-5level %-27C{1} - [%M] %msg%n&quot;).withConfiguration(config)</span>
+<span class="fc" id="L60">				.build();</span>
+<span class="fc" id="L61">		SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd_HH-mm-ss&quot;);</span>
+<span class="fc" id="L62">		logFileName = &quot;logs/log_&quot; + sdf.format(new Date()) + &quot;.log&quot;;</span>
+<span class="fc" id="L63">		Appender appender = FileAppender.newBuilder().setName(&quot;MyRollingFile&quot;).withImmediateFlush(true)</span>
+<span class="fc" id="L64">				.setLayout(layout).withFileName(logFileName).build();</span>
+<span class="fc" id="L65">		appender.start();</span>
+<span class="fc" id="L66">		config.addAppender(appender);</span>
+<span class="fc" id="L67">		config.getRootLogger().addAppender(appender, Level.ALL, null);</span>
+<span class="fc" id="L68">		ctx.updateLoggers(config);</span>
+<span class="fc" id="L69">	}</span>
+
+	public static String searchLogsByDate(Date date1, Date date2) {
+<span class="nc bnc" id="L72" title="All 2 branches missed.">		if (date1.after(date2)) {</span>
+<span class="nc" id="L73">			logger.error(&quot;Wrong order of date&quot;);</span>
+<span class="nc" id="L74">			return &quot;\u001B[m\u001B[1;31m&quot; + &quot;日期顺序错误！\n\u001B[m&quot;;</span>
+		}
+<span class="nc" id="L76">		BufferedReader stringReader = new BufferedReader(</span>
+<span class="nc" id="L77">				new InputStreamReader(new ByteArrayInputStream(logBuilder.toString().getBytes(Charset.forName(&quot;utf8&quot;))),</span>
+<span class="nc" id="L78">						Charset.forName(&quot;utf8&quot;)));</span>
+<span class="nc" id="L79">		StringBuilder resultBuilder = new StringBuilder();</span>
+		String line;
+		try {
+<span class="nc" id="L82">			SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);</span>
+<span class="nc bnc" id="L83" title="All 2 branches missed.">			while ((line = stringReader.readLine()) != null) {</span>
+<span class="nc bnc" id="L84" title="All 2 branches missed.">				if (Pattern.matches(&quot;\\d{4}(-\\d{2}){2} \\d{2}(:\\d{2}){2} (INFO|WARN|DEBUG|TRACE|ERROR).*&quot;, line)) {</span>
+<span class="nc" id="L85">					String dateString = line.substring(0, 19);</span>
+<span class="nc" id="L86">					Date currentDate = sdf.parse(dateString);</span>
+<span class="nc bnc" id="L87" title="All 6 branches missed.">					if ((currentDate.after(date1) &amp;&amp; currentDate.before(date2)) || currentDate.equals(date1)</span>
+<span class="nc bnc" id="L88" title="All 2 branches missed.">							|| currentDate.equals(date2)) {</span>
+<span class="nc" id="L89">						resultBuilder.append(line).append(&quot;\n&quot;);</span>
+					}
+				}
+			}
+<span class="nc" id="L93">			resultBuilder.append(&quot;\u001B[m&quot;);</span>
+<span class="nc" id="L94">		} catch (IOException e) {</span>
+<span class="nc" id="L95">			logger.error(&quot;IOException when parsing string&quot;, e);</span>
+<span class="nc" id="L96">			return &quot;\u001B[m\u001B[1;31m&quot; + &quot;读取日志时有错误发生！\n\u001B[m&quot;;</span>
+<span class="nc" id="L97">		} catch (ParseException e1) {</span>
+<span class="nc" id="L98">			logger.error(&quot;ParseException when parsing date string&quot;, e1);</span>
+<span class="nc" id="L99">			return &quot;\u001B[m\u001B[1;31m&quot; + &quot;解析日志日期时有错误发生！\n\u001B[m&quot;;</span>
+		}
+		try {
+<span class="nc" id="L102">			return prettifyLog(resultBuilder.toString());</span>
+<span class="nc" id="L103">		} catch (IOException e) {</span>
+<span class="nc" id="L104">			logger.error(&quot;IOException when prettify string&quot;, e);</span>
+<span class="nc" id="L105">			return resultBuilder.toString();</span>
+		}
+	}
+
+	public static String searchLogsByType(String type) {
+<span class="nc" id="L110">		return commonLogPattern(&quot;\\d{4}(-\\d{2}){2} \\d{2}(:\\d{2}){2} &quot; + type + &quot;.*&quot;);</span>
+	}
+
+	public static String searchLogsByClass(String classString) {
+<span class="nc" id="L114">		return commonLogPattern(</span>
+<span class="nc" id="L115">				&quot;\\d{4}(-\\d{2}){2} \\d{2}(:\\d{2}){2} (INFO|WARN|DEBUG|TRACE|ERROR)\\s+&quot; + classString + &quot;.*&quot;);</span>
+	}
+
+	public static String searchLogsByMethod(String method) {
+<span class="nc" id="L119">		return commonLogPattern(</span>
+<span class="nc" id="L120">				&quot;\\d{4}(-\\d{2}){2} \\d{2}(:\\d{2}){2} (INFO|WARN|DEBUG|TRACE|ERROR)\\s+[A-Za-z0-9_]+\\s+- \\[&quot; + method</span>
+<span class="nc" id="L121">						+ &quot;\\].*&quot;);</span>
+	}
+
+	public static String allLogs() {
+		try {
+<span class="nc" id="L126">			return prettifyLog(logBuilder.toString());</span>
+<span class="nc" id="L127">		} catch (IOException e) {</span>
+<span class="nc" id="L128">			logger.error(&quot;IOException when parsing string&quot;, e);</span>
+<span class="nc" id="L129">			return logBuilder.toString();</span>
+		}
+	}
+
+	public static String commonLogPattern(String pattern) {
+<span class="nc" id="L134">		BufferedReader stringReader = new BufferedReader(</span>
+<span class="nc" id="L135">				new InputStreamReader(new ByteArrayInputStream(logBuilder.toString().getBytes(Charset.forName(&quot;utf8&quot;))),</span>
+<span class="nc" id="L136">						Charset.forName(&quot;utf8&quot;)));</span>
+<span class="nc" id="L137">		StringBuilder resultBuilder = new StringBuilder();</span>
+		String line;
+		try {
+<span class="nc bnc" id="L140" title="All 2 branches missed.">			while ((line = stringReader.readLine()) != null) {</span>
+<span class="nc bnc" id="L141" title="All 2 branches missed.">				if (Pattern.matches(pattern, line)) {</span>
+<span class="nc" id="L142">					resultBuilder.append(line).append(&quot;\n&quot;);</span>
+				}
+			}
+<span class="nc" id="L145">			resultBuilder.append(&quot;\u001B[m&quot;);</span>
+<span class="nc" id="L146">		} catch (IOException e) {</span>
+<span class="nc" id="L147">			logger.error(&quot;IOException when parsing string&quot;, e);</span>
+<span class="nc" id="L148">			return &quot;\u001B[m\u001B[1;31m&quot; + &quot;读取日志时有错误发生！\n\u001B[m&quot;;</span>
+		}
+		try {
+<span class="nc" id="L151">			return prettifyLog(resultBuilder.toString());</span>
+<span class="nc" id="L152">		} catch (IOException e) {</span>
+<span class="nc" id="L153">			logger.error(&quot;IOException when prettify string&quot;, e);</span>
+<span class="nc" id="L154">			return resultBuilder.toString();</span>
+		}
+	}
+
+	public static String prettifyLog(String log) throws IOException {
+<span class="nc" id="L159">		BufferedReader stringReader = new BufferedReader(new InputStreamReader(</span>
+<span class="nc" id="L160">				new ByteArrayInputStream(log.getBytes(Charset.forName(&quot;utf8&quot;))), Charset.forName(&quot;utf8&quot;)));</span>
+<span class="nc" id="L161">		StringBuilder resultBuilder = new StringBuilder();</span>
+		String line;
+<span class="nc" id="L163">		String infoPattern = &quot;\\d{4}(-\\d{2}){2} \\d{2}(:\\d{2}){2} INFO.*&quot;;</span>
+<span class="nc" id="L164">		String warnPattern = &quot;\\d{4}(-\\d{2}){2} \\d{2}(:\\d{2}){2} WARN.*&quot;;</span>
+<span class="nc" id="L165">		String debugPattern = &quot;\\d{4}(-\\d{2}){2} \\d{2}(:\\d{2}){2} DEBUG.*&quot;;</span>
+<span class="nc" id="L166">		String tracePattern = &quot;\\d{4}(-\\d{2}){2} \\d{2}(:\\d{2}){2} TRACE.*&quot;;</span>
+<span class="nc" id="L167">		String errorPattern = &quot;\\d{4}(-\\d{2}){2} \\d{2}(:\\d{2}){2} ERROR.*&quot;;</span>
+<span class="nc bnc" id="L168" title="All 2 branches missed.">		while ((line = stringReader.readLine()) != null) {</span>
+<span class="nc bnc" id="L169" title="All 2 branches missed.">			if (Pattern.matches(infoPattern, line)) {</span>
+<span class="nc" id="L170">				resultBuilder.append(&quot;\u001B[m\u001B[32m&quot;).append(line).append(&quot;\n&quot;);</span>
+<span class="nc bnc" id="L171" title="All 2 branches missed.">			} else if (Pattern.matches(warnPattern, line)) {</span>
+<span class="nc" id="L172">				resultBuilder.append(&quot;\u001B[m\u001B[33m&quot;).append(line).append(&quot;\n&quot;);</span>
+<span class="nc bnc" id="L173" title="All 2 branches missed.">			} else if (Pattern.matches(debugPattern, line)) {</span>
+<span class="nc" id="L174">				resultBuilder.append(&quot;\u001B[m\u001B[36m&quot;).append(line).append(&quot;\n&quot;);</span>
+<span class="nc bnc" id="L175" title="All 2 branches missed.">			} else if (Pattern.matches(tracePattern, line)) {</span>
+<span class="nc" id="L176">				resultBuilder.append(&quot;\u001B[m\u001B[30m&quot;).append(line).append(&quot;\n&quot;);</span>
+<span class="nc bnc" id="L177" title="All 2 branches missed.">			} else if (Pattern.matches(errorPattern, line)) {</span>
+<span class="nc" id="L178">				resultBuilder.append(&quot;\u001B[m\u001B[1;31m&quot;).append(line).append(&quot;\n&quot;);</span>
+<span class="nc" id="L179">			} else {</span>
+<span class="nc" id="L180">				logger.warn(&quot;Cannot prettify log {}&quot;, line);</span>
+<span class="nc" id="L181">				resultBuilder.append(line).append(&quot;\n&quot;);</span>
+			}
+		}
+<span class="nc" id="L184">		resultBuilder.append(&quot;\u001B[m&quot;);</span>
+<span class="nc" id="L185">		return resultBuilder.toString();</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span>SC_Lab4_Cover (May 17, 2019 11:39:10 AM)</div></body></html>

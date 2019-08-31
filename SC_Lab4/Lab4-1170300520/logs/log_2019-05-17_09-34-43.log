@@ -1,0 +1,2 @@
+2019-05-17 09:34:43 INFO  LogReader                   - [readLog] start update file logs/log_2019-05-17_09-34-43.log
+2019-05-17 09:34:43 INFO  PlanetFactory               - [build] Build a planet with name Earth, state Solid, color Blue, radius 6378.137, trackRadius 1.49E8, speed 29.783, clockwise true, startAngle 0.0

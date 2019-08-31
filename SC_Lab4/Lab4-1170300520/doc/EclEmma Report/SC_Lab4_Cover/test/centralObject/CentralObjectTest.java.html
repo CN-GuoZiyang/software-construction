@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>CentralObjectTest.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">SC_Lab4_Cover (May 17, 2019 11:39:10 AM)</a> &gt; <a href="../../index.html" class="el_group">SC_Lab4_Cover</a> &gt; <a href="../index.html" class="el_bundle">test</a> &gt; <a href="index.source.html" class="el_package">centralObject</a> &gt; <span class="el_source">CentralObjectTest.java</span></div><h1>CentralObjectTest.java</h1><pre class="source lang-java linenums">package centralObject;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+import factory.StellarFactory;
+
+<span class="fc" id="L9">public class CentralObjectTest {</span>
+	
+	@Test
+	public void stellarTest() {
+<span class="fc" id="L13">		StellarFactory stellarFactory = new StellarFactory();</span>
+<span class="fc" id="L14">		Stellar stellar = stellarFactory.build(&quot;Sun&quot;, Double.valueOf(&quot;6.96392e5&quot;), Double.valueOf(&quot;1.9885e30&quot;));</span>
+<span class="fc" id="L15">		assertEquals(&quot;Sun&quot;, stellar.getName());</span>
+<span class="fc" id="L16">		assertEquals(Double.valueOf(&quot;6.96392e5&quot;), stellar.getRadius());</span>
+<span class="fc" id="L17">		assertEquals(Double.valueOf(&quot;1.9885e30&quot;), stellar.getWeight());</span>
+<span class="fc" id="L18">	}</span>
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span>SC_Lab4_Cover (May 17, 2019 11:39:10 AM)</div></body></html>

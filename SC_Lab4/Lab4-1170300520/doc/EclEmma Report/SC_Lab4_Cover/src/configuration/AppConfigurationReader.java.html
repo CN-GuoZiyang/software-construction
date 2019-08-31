@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>AppConfigurationReader.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">SC_Lab4_Cover (May 17, 2019 11:39:10 AM)</a> &gt; <a href="../../index.html" class="el_group">SC_Lab4_Cover</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">configuration</a> &gt; <span class="el_source">AppConfigurationReader.java</span></div><h1>AppConfigurationReader.java</h1><pre class="source lang-java linenums">package configuration;
+
+import configuration.Exception.ConfigurationLabelException;
+import configuration.Exception.ConfigurationSyntaxException;
+import factory.AppFactory;
+import factory.UserFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import otherBean.InstallLog;
+import otherBean.Relation;
+import otherBean.UninstallLog;
+import otherBean.UsageLog;
+
+import java.io.File;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+/**
+ * the implement of a configuration reader of the app ecosystem
+ *
+ * @author Guo Ziyang
+ */
+<span class="pc bpc" id="L29" title="1 of 2 branches missed.">public class AppConfigurationReader extends ConfigurationReader {</span>
+
+	private AppConfiguration appConfiguration;
+<span class="fc" id="L32">	private UserFactory userFactory = new UserFactory();</span>
+<span class="fc" id="L33">	private static Set&lt;String&gt; appNameSet = new HashSet&lt;&gt;();</span>
+
+<span class="fc" id="L35">	protected Logger logger = LoggerFactory.getLogger(AppConfigurationReader.class);</span>
+
+	public AppConfigurationReader(File file) {
+<span class="fc" id="L38">		super(file);</span>
+<span class="fc" id="L39">		configuration = new AppConfiguration();</span>
+<span class="fc" id="L40">		appConfiguration = (AppConfiguration) configuration;</span>
+<span class="fc" id="L41">		appNameSet.clear();</span>
+<span class="fc" id="L42">	}</span>
+
+	@Override
+	public void checkRep() {
+<span class="fc" id="L46">		super.checkRep();</span>
+<span class="pc bpc" id="L47" title="2 of 4 branches missed.">		assert configuration != null;</span>
+<span class="pc bpc" id="L48" title="2 of 4 branches missed.">		assert appConfiguration != null;</span>
+<span class="pc bpc" id="L49" title="2 of 4 branches missed.">		assert appNameSet != null;</span>
+<span class="fc" id="L50">	}</span>
+
+	@Override
+	public void parseConfiguration(String line) {
+<span class="fc" id="L54">		checkRep();</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">		if (line.startsWith(&quot;User ::= &quot;)) {</span>
+<span class="fc" id="L56">			Pattern namePattern = Pattern.compile(&quot;(?&lt;=User ::= )[A-Za-z0-9]+$&quot;);</span>
+<span class="fc" id="L57">			Matcher nameMatcher = namePattern.matcher(line);</span>
+<span class="fc bfc" id="L58" title="All 2 branches covered.">			if (nameMatcher.find()) {</span>
+<span class="fc" id="L59">				logger.info(&quot;User: {}&quot;, nameMatcher.group());</span>
+<span class="fc" id="L60">				appConfiguration.setUser(userFactory.build(nameMatcher.group()));</span>
+<span class="fc" id="L61">			} else {</span>
+<span class="fc" id="L62">				ConfigurationSyntaxException e = new ConfigurationSyntaxException(&quot;Wrong format of user name&quot;,</span>
+<span class="fc" id="L63">						lineNumber, file.getName());</span>
+<span class="fc" id="L64">				logger.error(&quot;Wrong format of user name&quot;, e);</span>
+<span class="fc" id="L65">				throw e;</span>
+			}
+<span class="fc bfc" id="L67" title="All 2 branches covered.">		} else if (line.startsWith(&quot;App ::= &lt;&quot;)) {</span>
+<span class="fc" id="L68">			Pattern appPattern = Pattern</span>
+<span class="fc" id="L69">					.compile(&quot;(?&lt;=App ::= &lt;)([A-Za-z0-9]+,){2}[a-zA-Z0-9._-]+,\&quot;.+?\&quot;,\&quot;.+?\&quot;(?=&gt;)&quot;);</span>
+<span class="fc" id="L70">			Matcher appMatcher = appPattern.matcher(line);</span>
+<span class="fc" id="L71">			AppFactory appFactory = new AppFactory();</span>
+<span class="fc bfc" id="L72" title="All 2 branches covered.">			if (appMatcher.find()) {</span>
+<span class="fc" id="L73">				String string = appMatcher.group();</span>
+<span class="fc" id="L74">				logger.info(&quot;App: {}&quot;, string);</span>
+<span class="fc" id="L75">				String[] splits = string.split(&quot;,&quot;);</span>
+<span class="fc bfc" id="L76" title="All 2 branches covered.">				if (appNameSet.contains(splits[0])) {</span>
+<span class="fc" id="L77">					ConfigurationLabelException e = new ConfigurationLabelException(&quot;Duplicate app with same name&quot;,</span>
+<span class="fc" id="L78">							lineNumber, file.getName());</span>
+<span class="fc" id="L79">					logger.error(&quot;Duplicate app with same name&quot;, e);</span>
+<span class="fc" id="L80">					throw e;</span>
+				} else {
+<span class="fc" id="L82">					appNameSet.add(splits[0]);</span>
+				}
+<span class="fc" id="L84">				appConfiguration.addApps(appFactory.build(splits[0], splits[1], splits[2],</span>
+<span class="fc" id="L85">						splits[3].substring(1, splits[3].length() - 1),</span>
+<span class="fc" id="L86">						splits[4].substring(1, splits[4].length() - 1)));</span>
+<span class="fc" id="L87">			} else {</span>
+<span class="fc" id="L88">				ConfigurationSyntaxException e = new ConfigurationSyntaxException(&quot;Wrong format of app&quot;, lineNumber,</span>
+<span class="fc" id="L89">						file.getName());</span>
+<span class="fc" id="L90">				logger.error(&quot;Wrong format of app&quot;, e);</span>
+<span class="fc" id="L91">				throw e;</span>
+			}
+<span class="fc bfc" id="L93" title="All 2 branches covered.">		} else if (line.startsWith(&quot;InstallLog ::= &lt;&quot;)) {</span>
+<span class="fc" id="L94">			Pattern installLogPattern = Pattern</span>
+<span class="fc" id="L95">					.compile(&quot;(?&lt;=InstallLog ::= &lt;)\\d{4}(-\\d{2}){2},\\d{2}(:\\d{2}){2},[A-Za-z0-9]+(?=&gt;)&quot;);</span>
+<span class="fc" id="L96">			Matcher installLogMatcher = installLogPattern.matcher(line);</span>
+<span class="fc bfc" id="L97" title="All 2 branches covered.">			if (installLogMatcher.find()) {</span>
+<span class="fc" id="L98">				String string = installLogMatcher.group();</span>
+<span class="fc" id="L99">				logger.info(&quot;InstallLog: {}&quot;, string);</span>
+<span class="fc" id="L100">				String[] splits = string.split(&quot;,&quot;);</span>
+<span class="fc" id="L101">				Calendar calendar = string2Calender(splits[0] + &quot; &quot; + splits[1]);</span>
+<span class="fc" id="L102">				appConfiguration.addInstallLog(new InstallLog(calendar, splits[2]));</span>
+<span class="fc" id="L103">			} else {</span>
+<span class="fc" id="L104">				ConfigurationSyntaxException e = new ConfigurationSyntaxException(&quot;Wrong format of install log&quot;,</span>
+<span class="fc" id="L105">						lineNumber, file.getName());</span>
+<span class="fc" id="L106">				logger.error(&quot;Wrong format of install log&quot;, e);</span>
+<span class="fc" id="L107">				throw e;</span>
+			}
+<span class="fc bfc" id="L109" title="All 2 branches covered.">		} else if (line.startsWith(&quot;UsageLog ::= &lt;&quot;)) {</span>
+<span class="fc" id="L110">			Pattern usageLogPattern = Pattern</span>
+<span class="fc" id="L111">					.compile(&quot;(?&lt;=UsageLog ::= &lt;)\\d{4}(-\\d{2}){2},\\d{2}(:\\d{2}){2},[A-Za-z0-9]+,\\d+(?=&gt;)&quot;);</span>
+<span class="fc" id="L112">			Matcher usageLogMatcher = usageLogPattern.matcher(line);</span>
+<span class="fc bfc" id="L113" title="All 2 branches covered.">			if (usageLogMatcher.find()) {</span>
+<span class="fc" id="L114">				String string = usageLogMatcher.group();</span>
+<span class="fc" id="L115">				logger.info(&quot;UsageLog: {}&quot;, string);</span>
+<span class="fc" id="L116">				String[] splits = string.split(&quot;,&quot;);</span>
+<span class="fc" id="L117">				Calendar calendar = string2Calender(splits[0] + &quot; &quot; + splits[1]);</span>
+				int duration;
+				try {
+<span class="fc" id="L120">					duration = Integer.parseInt(splits[3]);</span>
+<span class="pc" id="L121">				} catch (NumberFormatException e) {</span>
+<span class="nc" id="L122">					ConfigurationSyntaxException e1 = new ConfigurationSyntaxException(&quot;Wrong format of duration&quot;,</span>
+<span class="nc" id="L123">							lineNumber, file.getName());</span>
+<span class="nc" id="L124">					logger.error(&quot;Wrong format of duration&quot;, e1);</span>
+<span class="nc" id="L125">					throw e1;</span>
+				}
+<span class="fc" id="L127">				appConfiguration.addUsageLog(new UsageLog(calendar, splits[2], duration));</span>
+<span class="fc" id="L128">			} else {</span>
+<span class="fc" id="L129">				ConfigurationSyntaxException e = new ConfigurationSyntaxException(&quot;Wrong format of usage log&quot;,</span>
+<span class="fc" id="L130">						lineNumber, file.getName());</span>
+<span class="fc" id="L131">				logger.error(&quot;Wrong format of usage log&quot;, e);</span>
+<span class="fc" id="L132">				throw e;</span>
+			}
+<span class="fc bfc" id="L134" title="All 2 branches covered.">		} else if (line.startsWith(&quot;UninstallLog ::= &lt;&quot;)) {</span>
+<span class="fc" id="L135">			Pattern uninstallLogPattern = Pattern</span>
+<span class="fc" id="L136">					.compile(&quot;(?&lt;=UninstallLog ::= &lt;)\\d{4}(-\\d{2}){2},\\d{2}(:\\d{2}){2},[A-Za-z0-9]+(?=&gt;)&quot;);</span>
+<span class="fc" id="L137">			Matcher uninstallLogMatcher = uninstallLogPattern.matcher(line);</span>
+<span class="fc bfc" id="L138" title="All 2 branches covered.">			if (uninstallLogMatcher.find()) {</span>
+<span class="fc" id="L139">				String string = uninstallLogMatcher.group();</span>
+<span class="fc" id="L140">				logger.info(&quot;uninstallLog: {}&quot;, string);</span>
+<span class="fc" id="L141">				String[] splits = string.split(&quot;,&quot;);</span>
+<span class="fc" id="L142">				Calendar calendar = string2Calender(splits[0] + &quot; &quot; + splits[1]);</span>
+<span class="fc" id="L143">				appConfiguration.addUninstallLog(new UninstallLog(calendar, splits[2]));</span>
+<span class="fc" id="L144">			} else {</span>
+<span class="fc" id="L145">				ConfigurationSyntaxException e = new ConfigurationSyntaxException(&quot;Wrong format of uninstall log&quot;,</span>
+<span class="fc" id="L146">						lineNumber, file.getName());</span>
+<span class="fc" id="L147">				logger.error(&quot;Wrong format of uninstall log&quot;, e);</span>
+<span class="fc" id="L148">				throw e;</span>
+			}
+<span class="fc bfc" id="L150" title="All 2 branches covered.">		} else if (line.startsWith(&quot;Relation ::= &lt;&quot;)) {</span>
+<span class="fc" id="L151">			Pattern relationPattern = Pattern.compile(&quot;(?&lt;=Relation ::= &lt;)([A-Za-z0-9]+),([A-Za-z0-9]+)(?=&gt;)&quot;);</span>
+<span class="fc" id="L152">			Matcher relationMatcher = relationPattern.matcher(line);</span>
+<span class="fc bfc" id="L153" title="All 2 branches covered.">			if (relationMatcher.find()) {</span>
+<span class="fc" id="L154">				String string = relationMatcher.group();</span>
+<span class="fc" id="L155">				logger.info(&quot;Relation: {}&quot;, string);</span>
+<span class="fc" id="L156">				String[] splits = string.split(&quot;,&quot;);</span>
+<span class="fc bfc" id="L157" title="All 2 branches covered.">				if (splits[0].equals(splits[1])) {</span>
+<span class="fc" id="L158">					ConfigurationLabelException e = new ConfigurationLabelException(</span>
+<span class="fc" id="L159">							&quot;Invalid relation with duplicate app name&quot;, lineNumber, file.getName());</span>
+<span class="fc" id="L160">					logger.error(&quot;Invalid relation with duplicate app name&quot;, e);</span>
+<span class="fc" id="L161">					throw e;</span>
+				}
+<span class="fc" id="L163">				appConfiguration.addRelations(new Relation(splits[0], splits[1]));</span>
+<span class="fc" id="L164">			} else {</span>
+<span class="fc" id="L165">				ConfigurationSyntaxException e = new ConfigurationSyntaxException(&quot;Wrong format of uninstall log&quot;,</span>
+<span class="fc" id="L166">						lineNumber, file.getName());</span>
+<span class="fc" id="L167">				logger.error(&quot;Wrong format of uninstall log&quot;, e);</span>
+<span class="fc" id="L168">				throw e;</span>
+			}
+<span class="fc bfc" id="L170" title="All 2 branches covered.">		} else if (line.startsWith(&quot;Period ::= &quot;)) {</span>
+<span class="fc" id="L171">			Pattern periodPattern = Pattern.compile(&quot;(?&lt;=Period ::= )((Hour)|(Day)|(Week)|(Month))$&quot;);</span>
+<span class="fc" id="L172">			Matcher periodMatcher = periodPattern.matcher(line);</span>
+<span class="fc bfc" id="L173" title="All 2 branches covered.">			if (periodMatcher.find()) {</span>
+<span class="fc" id="L174">				String period = periodMatcher.group();</span>
+<span class="fc" id="L175">				logger.info(&quot;Period: {}&quot;, period);</span>
+<span class="pc bpc" id="L176" title="4 of 5 branches missed.">				switch (period) {</span>
+				case &quot;Hour&quot;:
+<span class="nc" id="L178">					appConfiguration.setPeriod(AppConfiguration.HOUR);</span>
+<span class="nc" id="L179">					break;</span>
+				case &quot;Day&quot;:
+<span class="fc" id="L181">					appConfiguration.setPeriod(AppConfiguration.DAY);</span>
+<span class="fc" id="L182">					break;</span>
+				case &quot;Week&quot;:
+<span class="nc" id="L184">					appConfiguration.setPeriod(AppConfiguration.WEEK);</span>
+<span class="nc" id="L185">					break;</span>
+				case &quot;Month&quot;:
+<span class="nc" id="L187">					appConfiguration.setPeriod(AppConfiguration.MONTH);</span>
+<span class="nc" id="L188">					break;</span>
+				default:
+<span class="nc" id="L190">					logger.error(&quot;Unknown error occors!&quot;, new RuntimeException());</span>
+				}
+<span class="nc" id="L192">			} else {</span>
+<span class="fc" id="L193">				ConfigurationSyntaxException e = new ConfigurationSyntaxException(&quot;Wrong format of period&quot;, lineNumber,</span>
+<span class="fc" id="L194">						file.getName());</span>
+<span class="fc" id="L195">				logger.error(&quot;Wrong format of period&quot;, e);</span>
+<span class="fc" id="L196">				throw e;</span>
+			}
+		} else {
+<span class="fc" id="L199">			String s = &quot;Invalid label '&quot; + line.substring(0, line.indexOf(&quot; &quot;)) + &quot;'&quot;;</span>
+<span class="fc" id="L200">			ConfigurationSyntaxException e = new ConfigurationSyntaxException(s, lineNumber, file.getName());</span>
+<span class="fc" id="L201">			logger.error(s, e);</span>
+<span class="fc" id="L202">			throw e;</span>
+		}
+<span class="fc" id="L204">	}</span>
+
+	private Calendar string2Calender(String string) {
+<span class="fc" id="L207">		checkRep();</span>
+<span class="fc" id="L208">		SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);</span>
+		Date date;
+		try {
+<span class="fc" id="L211">			date = sdf.parse(string);</span>
+<span class="pc" id="L212">		} catch (ParseException e) {</span>
+<span class="nc" id="L213">			ConfigurationSyntaxException e1 = new ConfigurationSyntaxException(&quot;Wrong date format&quot;, lineNumber,</span>
+<span class="nc" id="L214">					file.getName());</span>
+<span class="nc" id="L215">			logger.error(&quot;Wrong date format&quot;, e1);</span>
+<span class="nc" id="L216">			throw e1;</span>
+		}
+<span class="fc" id="L218">		Calendar calendar = Calendar.getInstance();</span>
+<span class="fc" id="L219">		calendar.setTime(date);</span>
+<span class="fc" id="L220">		return calendar;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span>SC_Lab4_Cover (May 17, 2019 11:39:10 AM)</div></body></html>

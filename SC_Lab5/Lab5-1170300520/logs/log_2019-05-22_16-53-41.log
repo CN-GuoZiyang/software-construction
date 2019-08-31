@@ -1,0 +1,1396 @@
+2019-05-22 16:53:41 INFO  LogReader                   - [readLog] start update file logs/log_2019-05-22_16-53-41.log
+2019-05-22 16:53:41 INFO  OrbitWithPositionFactory    - [buildStellarSystem] Build a stellar system with file /Users/guoziyang/Desktop/SC_Lab5/Lab5-1170300520/src/applications/configurations/StellarSystem.txt
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addCentralObject] add the central object Stellar (Sun)
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 1.49E8
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 1.49E8
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 1.49E8
+2019-05-22 16:53:41 INFO  AbstractOrbitWithPosition   - [addPhysicalObject] add a object Earth to the track Track (1.49E8)
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 1490000.0
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 1490000.0
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 1490000.0
+2019-05-22 16:53:41 INFO  AbstractOrbitWithPosition   - [addPhysicalObject] add a object Saturn to the track Track (1490000.0)
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 2.0E8
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 2.0E8
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 2.0E8
+2019-05-22 16:53:41 INFO  AbstractOrbitWithPosition   - [addPhysicalObject] add a object Jupiter to the track Track (2.0E8)
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 1.49E7
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 1.49E7
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 1.49E7
+2019-05-22 16:53:41 INFO  AbstractOrbitWithPosition   - [addPhysicalObject] add a object Mercury to the track Track (1.49E7)
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 149000.0
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 149000.0
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 149000.0
+2019-05-22 16:53:41 INFO  AbstractOrbitWithPosition   - [addPhysicalObject] add a object Neptune to the track Track (149000.0)
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 1.49E11
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 1.49E11
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 1.49E11
+2019-05-22 16:53:41 INFO  AbstractOrbitWithPosition   - [addPhysicalObject] add a object Uranus to the track Track (1.49E11)
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 9.99E10
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 9.99E10
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 9.99E10
+2019-05-22 16:53:41 INFO  AbstractOrbitWithPosition   - [addPhysicalObject] add a object Mars to the track Track (9.99E10)
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 1.49E20
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 1.49E20
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 1.49E20
+2019-05-22 16:53:41 INFO  AbstractOrbitWithPosition   - [addPhysicalObject] add a object Venus to the track Track (1.49E20)
+2019-05-22 16:53:41 INFO  StellarSystem               - [buildFromConfiguration] successfully build from configuration
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [iterator] successfully build the iterator of circularorbit.StellarSystem@31d7b7bf
+2019-05-22 16:53:41 INFO  OrbitWithoutPositionFactory - [buildAtomStructure] build a AtomStructure with file /Users/guoziyang/Desktop/SC_Lab5/Lab5-1170300520/src/applications/configurations/AtomicStructure.txt
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addCentralObject] add the central object AtomicNucleus (Rb)
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 1.0
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 1.0
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 2.0
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 2.0
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 3.0
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 3.0
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 4.0
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 4.0
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 5.0
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 5.0
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@1ddf84b8 to the track Track (1.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@1139b2f3 to the track Track (1.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@7a69b07 to the track Track (2.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@5e82df6a to the track Track (2.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@3f197a46 to the track Track (2.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@636be97c to the track Track (2.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@50a638b5 to the track Track (2.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@1817d444 to the track Track (2.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@6ca8564a to the track Track (2.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@50b472aa to the track Track (2.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@31368b99 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@1725dc0f to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@3911c2a7 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@4ac3c60d to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@4facf68f to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@76508ed1 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@41e36e46 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@15c43bd9 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@3d74bf60 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@4f209819 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@15eb5ee5 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@2145b572 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@39529185 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@72f926e6 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@3daa422a to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@31c88ec8 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@1cbbffcd to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@27ce24aa to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@481a996b to the track Track (4.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@3d51f06e to the track Track (4.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@7ed7259e to the track Track (4.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@28eaa59a to the track Track (4.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@3427b02d to the track Track (4.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@647e447 to the track Track (4.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@41fbdac4 to the track Track (4.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@3c407114 to the track Track (4.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@35ef1869 to the track Track (5.0)
+2019-05-22 16:53:41 INFO  AtomStructure               - [buildFromConfiguration] successfully build from configuration
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [removePhysicalObject] remove a physical object physicalobject.Electron@35ef1869
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [removeTrack] remove the track Track (5.0)
+2019-05-22 16:53:41 INFO  OrbitWithoutPositionFactory - [buildAtomStructure] build a AtomStructure with file /Users/guoziyang/Desktop/SC_Lab5/Lab5-1170300520/src/applications/configurations/AtomicStructure.txt
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addCentralObject] add the central object AtomicNucleus (Rb)
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 1.0
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 1.0
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 2.0
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 2.0
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 3.0
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 3.0
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 4.0
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 4.0
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 5.0
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 5.0
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@c33b74f to the track Track (1.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@130161f7 to the track Track (1.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@2c767a52 to the track Track (2.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@619713e5 to the track Track (2.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@708f5957 to the track Track (2.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@68999068 to the track Track (2.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@7722c3c3 to the track Track (2.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@2ef3eef9 to the track Track (2.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@243c4f91 to the track Track (2.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@291ae to the track Track (2.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@61df66b6 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@50eac852 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@16ec5519 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@2f7298b to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@188715b5 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@1ea9f6af to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@6a192cfe to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@5119fb47 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@7193666c to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@20deea7f to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@3835c46 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@1dde4cb2 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@7714e963 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@20ce78ec to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@393671df to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@56620197 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@6eda5c9 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@55b7a4e0 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@5f058f00 to the track Track (4.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@192d43ce to the track Track (4.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@72057ecf to the track Track (4.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@1afd44cb to the track Track (4.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@6973b51b to the track Track (4.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@1ab3a8c8 to the track Track (4.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@43195e57 to the track Track (4.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@333291e3 to the track Track (4.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@479d31f3 to the track Track (5.0)
+2019-05-22 16:53:41 INFO  AtomStructure               - [buildFromConfiguration] successfully build from configuration
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@40ef3420 to the track Track (5.0)
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addCentralRelation] add central relation with physicalobject.Electron@40ef3420
+2019-05-22 16:53:41 INFO  OrbitWithoutPositionFactory - [buildAtomStructure] build a AtomStructure with file /Users/guoziyang/Desktop/SC_Lab5/Lab5-1170300520/src/applications/configurations/AtomicStructure.txt
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addCentralObject] add the central object AtomicNucleus (Rb)
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 1.0
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 1.0
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 2.0
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 2.0
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 3.0
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 3.0
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 4.0
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 4.0
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 5.0
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 5.0
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@498d318c to the track Track (1.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@6e171cd7 to the track Track (1.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@402bba4f to the track Track (2.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@795cd85e to the track Track (2.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@59fd97a8 to the track Track (2.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@f5ac9e4 to the track Track (2.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@123ef382 to the track Track (2.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@dbf57b3 to the track Track (2.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@384ad17b to the track Track (2.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@61862a7f to the track Track (2.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@441772e to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@7334aada to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@1d9b7cce to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@4d9e68d0 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@42e99e4a to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@14dd9eb7 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@52e6fdee to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@6c80d78a to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@62150f9e to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@1a451d4d to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@7fa98a66 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@15ff3e9e to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@5fdcaa40 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@6dc17b83 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@5e0826e7 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@32eff876 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@8dbdac1 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@6e20b53a to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@71809907 to the track Track (4.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@3ce1e309 to the track Track (4.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@6aba2b86 to the track Track (4.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@158da8e to the track Track (4.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@74e52303 to the track Track (4.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@47af7f3d to the track Track (4.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@7c729a55 to the track Track (4.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@3bb9a3ff to the track Track (4.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@661972b0 to the track Track (5.0)
+2019-05-22 16:53:41 INFO  AtomStructure               - [buildFromConfiguration] successfully build from configuration
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 6.0
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 6.0
+2019-05-22 16:53:41 INFO  OrbitWithoutPositionFactory - [buildAtomStructure] build a AtomStructure with file /Users/guoziyang/Desktop/SC_Lab5/Lab5-1170300520/src/applications/configurations/AtomicStructure.txt
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addCentralObject] add the central object AtomicNucleus (Rb)
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 1.0
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 1.0
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 2.0
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 2.0
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 3.0
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 3.0
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 4.0
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 4.0
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 5.0
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 5.0
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@5af3afd9 to the track Track (1.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@323b36e0 to the track Track (1.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@44ebcd03 to the track Track (2.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@694abbdc to the track Track (2.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@2e005c4b to the track Track (2.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@4567f35d to the track Track (2.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@5ffead27 to the track Track (2.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@6356695f to the track Track (2.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@4f18837a to the track Track (2.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@359f7cdf to the track Track (2.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@1fa268de to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@4f6ee6e4 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@4466af20 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@a514af7 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@6b927fb to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@3e58a80e to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@4fb61f4a to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@4fb0f2b9 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@79924b to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@7b9a4292 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@4a94ee4 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@4cc451f2 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@6379eb to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@294425a7 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@67d48005 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@9f116cc to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@12468a38 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@1aa7ecca to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@59309333 to the track Track (4.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@5876a9af to the track Track (4.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@7ec7ffd3 to the track Track (4.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@5b239d7d to the track Track (4.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@6572421 to the track Track (4.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@6b81ce95 to the track Track (4.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@2a798d51 to the track Track (4.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@6d763516 to the track Track (4.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@52bf72b5 to the track Track (5.0)
+2019-05-22 16:53:41 INFO  AtomStructure               - [buildFromConfiguration] successfully build from configuration
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@37afeb11 to the track Track (3.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@515aebb0 to the track Track (5.0)
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addRelation] add physical relation between physicalobject.Electron@37afeb11 and physicalobject.Electron@515aebb0 with value 6.0
+2019-05-22 16:53:41 INFO  OrbitWithPositionFactory    - [buildStellarSystem] Build a stellar system with file /Users/guoziyang/Desktop/SC_Lab5/Lab5-1170300520/src/applications/configurations/StellarSystem.txt
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addCentralObject] add the central object Stellar (Sun)
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 1.49E8
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 1.49E8
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 1.49E8
+2019-05-22 16:53:41 INFO  AbstractOrbitWithPosition   - [addPhysicalObject] add a object Earth to the track Track (1.49E8)
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 1490000.0
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 1490000.0
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 1490000.0
+2019-05-22 16:53:41 INFO  AbstractOrbitWithPosition   - [addPhysicalObject] add a object Saturn to the track Track (1490000.0)
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 2.0E8
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 2.0E8
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 2.0E8
+2019-05-22 16:53:41 INFO  AbstractOrbitWithPosition   - [addPhysicalObject] add a object Jupiter to the track Track (2.0E8)
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 1.49E7
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 1.49E7
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 1.49E7
+2019-05-22 16:53:41 INFO  AbstractOrbitWithPosition   - [addPhysicalObject] add a object Mercury to the track Track (1.49E7)
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 149000.0
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 149000.0
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 149000.0
+2019-05-22 16:53:41 INFO  AbstractOrbitWithPosition   - [addPhysicalObject] add a object Neptune to the track Track (149000.0)
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 1.49E11
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 1.49E11
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 1.49E11
+2019-05-22 16:53:41 INFO  AbstractOrbitWithPosition   - [addPhysicalObject] add a object Uranus to the track Track (1.49E11)
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 9.99E10
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 9.99E10
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 9.99E10
+2019-05-22 16:53:41 INFO  AbstractOrbitWithPosition   - [addPhysicalObject] add a object Mars to the track Track (9.99E10)
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 1.49E20
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 1.49E20
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 1.49E20
+2019-05-22 16:53:41 INFO  AbstractOrbitWithPosition   - [addPhysicalObject] add a object Venus to the track Track (1.49E20)
+2019-05-22 16:53:41 INFO  StellarSystem               - [buildFromConfiguration] successfully build from configuration
+2019-05-22 16:53:41 INFO  AbstractOrbitWithPosition   - [move] move the object Earth on the track Track (1.49E8) to 120.0
+2019-05-22 16:53:41 INFO  OrbitWithoutPositionFactory - [buildAtomStructure] build a AtomStructure with name Te
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addCentralObject] add the central object AtomicNucleus (Te)
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 1.0
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 1.0
+2019-05-22 16:53:41 WARN  AbstractCircularOrbit       - [getTrack] cannot find track with radius 2.0
+2019-05-22 16:53:41 INFO  AbstractCircularOrbit       - [addTrack] add a track with radius 2.0
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@6c64cb25 to the track Track (1.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [addPhysicalObject] add a object physicalobject.Electron@6ae5aa72 to the track Track (2.0)
+2019-05-22 16:53:41 INFO  AbstractOrbit               - [transit] transit object physicalobject.Electron@6ae5aa72 from track Track (2.0) to track Track (1.0)
+2019-05-22 16:53:41 ERROR AtomParser                  - [parseConfiguration] Invalid label 'Something'
+configuration.exception.ConfigurationSyntaxException: 
+Configuration Syntax error: Invalid label 'Something' at line 4
+File: AtomicStructure_UnknownLabel.txt
+	at configuration.AtomParser.parseConfiguration(AtomParser.java:101) [Lab5-1170300520/:?]
+	at ioperformance.BufferedIoReader.readFile(BufferedIoReader.java:46) [Lab5-1170300520/:?]
+	at configuration.AtomicStructureException.unknownLabel(AtomicStructureException.java:52) [Lab5-1170300520/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_211]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:128) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:27) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
+2019-05-22 16:53:41 ERROR AtomParser                  - [parseConfiguration] Duplicate element name label
+configuration.exception.ConfigurationLabelException: 
+Conflict Label Found: Duplicate element name label at line 2
+File: AtomicStructure_DuplicateName.txt
+	at configuration.AtomParser.parseConfiguration(AtomParser.java:39) [Lab5-1170300520/:?]
+	at ioperformance.BufferedIoReader.readFile(BufferedIoReader.java:46) [Lab5-1170300520/:?]
+	at configuration.AtomicStructureException.duplicateName(AtomicStructureException.java:24) [Lab5-1170300520/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_211]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:128) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:27) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
+2019-05-22 16:53:41 ERROR AtomParser                  - [parseConfiguration] Wrong format of element name
+configuration.exception.ConfigurationSyntaxException: 
+Configuration Syntax error: Wrong format of element name at line 1
+File: AtomicStructure_NameFormat.txt
+	at configuration.AtomParser.parseConfiguration(AtomParser.java:49) [Lab5-1170300520/:?]
+	at ioperformance.BufferedIoReader.readFile(BufferedIoReader.java:46) [Lab5-1170300520/:?]
+	at configuration.AtomicStructureException.nameFormat(AtomicStructureException.java:31) [Lab5-1170300520/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_211]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:128) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:27) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
+2019-05-22 16:53:41 ERROR AtomParser                  - [parseConfiguration] Wrong format of tracks number
+configuration.exception.ConfigurationSyntaxException: 
+Configuration Syntax error: Wrong format of tracks number at line 2
+File: AtomicStructure_NumberFormat.txt
+	at configuration.AtomParser.parseConfiguration(AtomParser.java:60) [Lab5-1170300520/:?]
+	at ioperformance.BufferedIoReader.readFile(BufferedIoReader.java:46) [Lab5-1170300520/:?]
+	at configuration.AtomicStructureException.numberFormat(AtomicStructureException.java:38) [Lab5-1170300520/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_211]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:128) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:27) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
+2019-05-22 16:53:41 ERROR AtomParser                  - [parseConfiguration] Dependency error: track number conflicts
+configuration.exception.ConfigurationDependencyException: 
+Dependency Error: Dependency error: track number conflicts at line 3
+File: AtomicStructure_TrackNumber.txt
+	at configuration.AtomParser.parseConfiguration(AtomParser.java:94) [Lab5-1170300520/:?]
+	at ioperformance.BufferedIoReader.readFile(BufferedIoReader.java:46) [Lab5-1170300520/:?]
+	at configuration.AtomicStructureException.trackNumber(AtomicStructureException.java:17) [Lab5-1170300520/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_211]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:128) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:27) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
+2019-05-22 16:53:41 ERROR AtomParser                  - [parseConfiguration] Wrong format of electron number
+configuration.exception.ConfigurationSyntaxException: 
+Configuration Syntax error: Wrong format of electon number at line 3
+File: AtomicStructure_ElectronFormat.txt
+	at configuration.AtomParser.parseConfiguration(AtomParser.java:84) [Lab5-1170300520/:?]
+	at ioperformance.BufferedIoReader.readFile(BufferedIoReader.java:46) [Lab5-1170300520/:?]
+	at configuration.AtomicStructureException.electronFormat(AtomicStructureException.java:45) [Lab5-1170300520/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_211]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:128) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:27) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
+2019-05-22 16:53:41 ERROR AppParser                   - [parseConfiguration] Wrong format of app
+configuration.exception.ConfigurationSyntaxException: 
+Configuration Syntax error: Wrong format of app at line 32
+File: PersonalAppEcosystem_AppFormat.txt
+	at configuration.AppParser.parseConfiguration(AppParser.java:92) [Lab5-1170300520/:?]
+	at ioperformance.BufferedIoReader.readFile(BufferedIoReader.java:46) [Lab5-1170300520/:?]
+	at configuration.PersonalAppEcosystemException.appAppFormat(PersonalAppEcosystemException.java:30) [Lab5-1170300520/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_211]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:128) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:27) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
+2019-05-22 16:53:41 ERROR AppParser                   - [parseConfiguration] Invalid label 'Something'
+configuration.exception.ConfigurationSyntaxException: 
+Configuration Syntax error: Invalid label 'Something' at line 42
+File: PersonalAppEcosystem_UnknownLabel.txt
+	at configuration.AppParser.parseConfiguration(AppParser.java:191) [Lab5-1170300520/:?]
+	at ioperformance.BufferedIoReader.readFile(BufferedIoReader.java:46) [Lab5-1170300520/:?]
+	at configuration.PersonalAppEcosystemException.unknownLabel(PersonalAppEcosystemException.java:86) [Lab5-1170300520/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_211]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:128) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:27) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
+2019-05-22 16:53:41 ERROR AppParser                   - [parseConfiguration] Duplicate app with same name
+configuration.exception.ConfigurationLabelException: 
+Conflict Label Found: Duplicate app with same name at line 33
+File: PersonalAppEcosystem_SameApp.txt
+	at configuration.AppParser.parseConfiguration(AppParser.java:81) [Lab5-1170300520/:?]
+	at ioperformance.BufferedIoReader.readFile(BufferedIoReader.java:46) [Lab5-1170300520/:?]
+	at configuration.PersonalAppEcosystemException.appSameApp(PersonalAppEcosystemException.java:23) [Lab5-1170300520/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_211]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:128) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:27) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
+2019-05-22 16:53:41 ERROR AppParser                   - [parseConfiguration] Wrong format of usage log
+configuration.exception.ConfigurationSyntaxException: 
+Configuration Syntax error: Wrong format of usage log at line 24
+File: PersonalAppEcosystem_UsageLogFormat.txt
+	at configuration.AppParser.parseConfiguration(AppParser.java:127) [Lab5-1170300520/:?]
+	at ioperformance.BufferedIoReader.readFile(BufferedIoReader.java:46) [Lab5-1170300520/:?]
+	at configuration.PersonalAppEcosystemException.appUsageLogFormat(PersonalAppEcosystemException.java:51) [Lab5-1170300520/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_211]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:128) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:27) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
+2019-05-22 16:53:41 ERROR AppParser                   - [parseConfiguration] Wrong format of usage log
+configuration.exception.ConfigurationSyntaxException: 
+Configuration Syntax error: Wrong format of usage log at line 14
+File: PersonalAppEcosystem_DurationFormat.txt
+	at configuration.AppParser.parseConfiguration(AppParser.java:127) [Lab5-1170300520/:?]
+	at ioperformance.BufferedIoReader.readFile(BufferedIoReader.java:46) [Lab5-1170300520/:?]
+	at configuration.PersonalAppEcosystemException.durationFormat(PersonalAppEcosystemException.java:58) [Lab5-1170300520/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_211]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:128) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:27) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
+2019-05-22 16:53:41 ERROR AppParser                   - [parseConfiguration] Wrong format of period
+configuration.exception.ConfigurationSyntaxException: 
+Configuration Syntax error: Wrong format of period at line 34
+File: PersonalAppEcosystem_PeriodFormat.txt
+	at configuration.AppParser.parseConfiguration(AppParser.java:184) [Lab5-1170300520/:?]
+	at ioperformance.BufferedIoReader.readFile(BufferedIoReader.java:46) [Lab5-1170300520/:?]
+	at configuration.PersonalAppEcosystemException.periodFormat(PersonalAppEcosystemException.java:79) [Lab5-1170300520/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_211]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:128) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:27) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
+2019-05-22 16:53:41 ERROR AppParser                   - [parseConfiguration] Wrong format of install log
+configuration.exception.ConfigurationSyntaxException: 
+Configuration Syntax error: Wrong format of install log at line 5
+File: PersonalAppEcosystem_Calendar.txt
+	at configuration.AppParser.parseConfiguration(AppParser.java:105) [Lab5-1170300520/:?]
+	at ioperformance.BufferedIoReader.readFile(BufferedIoReader.java:46) [Lab5-1170300520/:?]
+	at configuration.PersonalAppEcosystemException.calendar(PersonalAppEcosystemException.java:93) [Lab5-1170300520/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_211]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:128) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:27) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
+2019-05-22 16:53:41 ERROR AppParser                   - [parseConfiguration] Invalid relation with duplicate app name
+configuration.exception.ConfigurationLabelException: 
+Conflict Label Found: Invalid relation with duplicate app name at line 38
+File: PersonalAppEcosystem_RelationLabel.txt
+	at configuration.AppParser.parseConfiguration(AppParser.java:151) [Lab5-1170300520/:?]
+	at ioperformance.BufferedIoReader.readFile(BufferedIoReader.java:46) [Lab5-1170300520/:?]
+	at configuration.PersonalAppEcosystemException.relationLabel(PersonalAppEcosystemException.java:72) [Lab5-1170300520/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_211]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:128) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:27) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
+2019-05-22 16:53:41 ERROR AppParser                   - [parseConfiguration] Wrong format of uninstall log
+configuration.exception.ConfigurationSyntaxException: 
+Configuration Syntax error: Wrong format of uninstall log at line 37
+File: PersonalAppEcosystem_RelationFormat.txt
+	at configuration.AppParser.parseConfiguration(AppParser.java:158) [Lab5-1170300520/:?]
+	at ioperformance.BufferedIoReader.readFile(BufferedIoReader.java:46) [Lab5-1170300520/:?]
+	at configuration.PersonalAppEcosystemException.relationFormat(PersonalAppEcosystemException.java:65) [Lab5-1170300520/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_211]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:128) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:27) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
+2019-05-22 16:53:41 ERROR AppParser                   - [parseConfiguration] Wrong format of user name
+configuration.exception.ConfigurationSyntaxException: 
+Configuration Syntax error: Wrong format of user name at line 1
+File: PersonalAppEcosystem_Name.txt
+	at configuration.AppParser.parseConfiguration(AppParser.java:69) [Lab5-1170300520/:?]
+	at ioperformance.BufferedIoReader.readFile(BufferedIoReader.java:46) [Lab5-1170300520/:?]
+	at configuration.PersonalAppEcosystemException.appUserNameFormat(PersonalAppEcosystemException.java:16) [Lab5-1170300520/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_211]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:128) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:27) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
+2019-05-22 16:53:41 ERROR AppParser                   - [parseConfiguration] Wrong format of uninstall log
+configuration.exception.ConfigurationSyntaxException: 
+Configuration Syntax error: Wrong format of uninstall log at line 11
+File: PersonalAppEcosystem_UninstallLogFormat.txt
+	at configuration.AppParser.parseConfiguration(AppParser.java:140) [Lab5-1170300520/:?]
+	at ioperformance.BufferedIoReader.readFile(BufferedIoReader.java:46) [Lab5-1170300520/:?]
+	at configuration.PersonalAppEcosystemException.appUninstallLogFormat(PersonalAppEcosystemException.java:44) [Lab5-1170300520/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_211]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:128) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:27) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
+2019-05-22 16:53:41 ERROR AppParser                   - [parseConfiguration] Wrong format of install log
+configuration.exception.ConfigurationSyntaxException: 
+Configuration Syntax error: Wrong format of install log at line 8
+File: PersonalAppEcosystem_InstallLogFormat.txt
+	at configuration.AppParser.parseConfiguration(AppParser.java:105) [Lab5-1170300520/:?]
+	at ioperformance.BufferedIoReader.readFile(BufferedIoReader.java:46) [Lab5-1170300520/:?]
+	at configuration.PersonalAppEcosystemException.appInstallLogFormat(PersonalAppEcosystemException.java:37) [Lab5-1170300520/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_211]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:128) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:27) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
+2019-05-22 16:53:41 ERROR StellarParser               - [parseConfiguration] Invalid label 'Something'
+configuration.exception.ConfigurationSyntaxException: 
+Configuration Syntax error: Invalid label 'Something' at line 10
+File: StellarSystem_UnknownLabel.txt
+	at configuration.StellarParser.parseConfiguration(StellarParser.java:118) [Lab5-1170300520/:?]
+	at ioperformance.BufferedIoReader.readFile(BufferedIoReader.java:46) [Lab5-1170300520/:?]
+	at configuration.StellarSystemException.unknownLabel(StellarSystemException.java:58) [Lab5-1170300520/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_211]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:128) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:27) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
+2019-05-22 16:53:41 ERROR StellarParser               - [validateNumber] Improper use of Scientific notation
+configuration.exception.ConfigurationSyntaxException: 
+Configuration Syntax error: Improper use of Scientific notation at line 1
+File: StellarSystem_WrongPower2.txt
+	at configuration.StellarParser.validateNumber(StellarParser.java:156) [Lab5-1170300520/:?]
+	at configuration.StellarParser.parseConfiguration(StellarParser.java:59) [Lab5-1170300520/:?]
+	at ioperformance.BufferedIoReader.readFile(BufferedIoReader.java:46) [Lab5-1170300520/:?]
+	at configuration.StellarSystemException.wrongPower2(StellarSystemException.java:86) [Lab5-1170300520/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_211]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:128) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:27) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
+2019-05-22 16:53:41 ERROR StellarParser               - [validateNumber] Improper use of Scientific notation
+configuration.exception.ConfigurationSyntaxException: 
+Configuration Syntax error: Improper use of Scientific notation at line 1
+File: StellarSystem_ImproperScience.txt
+	at configuration.StellarParser.validateNumber(StellarParser.java:156) [Lab5-1170300520/:?]
+	at configuration.StellarParser.parseConfiguration(StellarParser.java:59) [Lab5-1170300520/:?]
+	at ioperformance.BufferedIoReader.readFile(BufferedIoReader.java:46) [Lab5-1170300520/:?]
+	at configuration.StellarSystemException.improperScience(StellarSystemException.java:93) [Lab5-1170300520/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_211]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:128) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:27) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
+2019-05-22 16:53:41 ERROR StellarParser               - [parseConfiguration] Wrong format of planet
+configuration.exception.ConfigurationSyntaxException: 
+Configuration Syntax error: Wrong format of planet at line 7
+File: StellarSystem_PlanetFormat.txt
+	at configuration.StellarParser.parseConfiguration(StellarParser.java:110) [Lab5-1170300520/:?]
+	at ioperformance.BufferedIoReader.readFile(BufferedIoReader.java:46) [Lab5-1170300520/:?]
+	at configuration.StellarSystemException.planetFormat(StellarSystemException.java:51) [Lab5-1170300520/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_211]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:128) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:27) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
+2019-05-22 16:53:41 ERROR StellarParser               - [validateNumber] Wrong format for coefficient of scientific notation
+configuration.exception.ConfigurationSyntaxException: 
+Configuration Syntax error: Wrong format for coefficient of scientific notation at line 1
+File: StellarSystem_WrongCoefficient.txt
+	at configuration.StellarParser.validateNumber(StellarParser.java:134) [Lab5-1170300520/:?]
+	at configuration.StellarParser.parseConfiguration(StellarParser.java:59) [Lab5-1170300520/:?]
+	at ioperformance.BufferedIoReader.readFile(BufferedIoReader.java:46) [Lab5-1170300520/:?]
+	at configuration.StellarSystemException.wrongCoefficient(StellarSystemException.java:72) [Lab5-1170300520/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_211]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:128) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:27) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
+2019-05-22 16:53:41 ERROR StellarParser               - [parseConfiguration] Duplicate Stellar label
+configuration.exception.ConfigurationLabelException: 
+Conflict Label Found: Duplicate Stellar label at line 2
+File: StellarSystem_DuplicateStellar.txt
+	at configuration.StellarParser.parseConfiguration(StellarParser.java:50) [Lab5-1170300520/:?]
+	at ioperformance.BufferedIoReader.readFile(BufferedIoReader.java:46) [Lab5-1170300520/:?]
+	at configuration.StellarSystemException.duplicateStellar(StellarSystemException.java:16) [Lab5-1170300520/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_211]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:128) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:27) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
+2019-05-22 16:53:41 ERROR StellarParser               - [parseConfiguration] Wrong format of stellar
+configuration.exception.ConfigurationSyntaxException: 
+Configuration Syntax error: Wrong format of stellar at line 1
+File: StellarSystem_WrongPower.txt
+	at configuration.StellarParser.parseConfiguration(StellarParser.java:65) [Lab5-1170300520/:?]
+	at ioperformance.BufferedIoReader.readFile(BufferedIoReader.java:46) [Lab5-1170300520/:?]
+	at configuration.StellarSystemException.wrongPower(StellarSystemException.java:79) [Lab5-1170300520/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_211]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:128) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:27) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
+2019-05-22 16:53:41 ERROR StellarParser               - [parseConfiguration] Wrong start angle
+configuration.exception.ConfigurationSyntaxException: 
+Configuration Syntax error: Wrong start angle at line 7
+File: StellarSystem_WrongStart.txt
+	at configuration.StellarParser.parseConfiguration(StellarParser.java:97) [Lab5-1170300520/:?]
+	at ioperformance.BufferedIoReader.readFile(BufferedIoReader.java:46) [Lab5-1170300520/:?]
+	at configuration.StellarSystemException.wrongStart(StellarSystemException.java:44) [Lab5-1170300520/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_211]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:128) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:27) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
+2019-05-22 16:53:41 ERROR StellarParser               - [parseConfiguration] Duplicate planet with same name
+configuration.exception.ConfigurationLabelException: 
+Conflict Label Found: Duplicate planet with same name at line 6
+File: StellarSystem_DuplicatePlanet.txt
+	at configuration.StellarParser.parseConfiguration(StellarParser.java:77) [Lab5-1170300520/:?]
+	at ioperformance.BufferedIoReader.readFile(BufferedIoReader.java:46) [Lab5-1170300520/:?]
+	at configuration.StellarSystemException.duplicatePlanet(StellarSystemException.java:30) [Lab5-1170300520/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_211]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:128) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:27) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
+2019-05-22 16:53:41 ERROR StellarParser               - [parseConfiguration] Wrong format of stellar
+configuration.exception.ConfigurationSyntaxException: 
+Configuration Syntax error: Wrong format of stellar at line 1
+File: StellarSystem_StellarFormat.txt
+	at configuration.StellarParser.parseConfiguration(StellarParser.java:65) [Lab5-1170300520/:?]
+	at ioperformance.BufferedIoReader.readFile(BufferedIoReader.java:46) [Lab5-1170300520/:?]
+	at configuration.StellarSystemException.stellarFormat(StellarSystemException.java:23) [Lab5-1170300520/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_211]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:128) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:27) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
+2019-05-22 16:53:41 ERROR StellarParser               - [parseConfiguration] Wrong format of planet
+configuration.exception.ConfigurationSyntaxException: 
+Configuration Syntax error: Wrong format of planet at line 6
+File: StellarSystem_WrongRotation.txt
+	at configuration.StellarParser.parseConfiguration(StellarParser.java:110) [Lab5-1170300520/:?]
+	at ioperformance.BufferedIoReader.readFile(BufferedIoReader.java:46) [Lab5-1170300520/:?]
+	at configuration.StellarSystemException.wrongRotation(StellarSystemException.java:37) [Lab5-1170300520/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_211]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_211]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_211]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_211]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:128) [junit.jar:4.12]
+	at org.junit.runners.Suite.runChild(Suite.java:27) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]

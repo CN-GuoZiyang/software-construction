@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>PersonalAppEcosystemException.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">SC_Lab4_Cover (May 17, 2019 11:39:10 AM)</a> &gt; <a href="../../index.html" class="el_group">SC_Lab4_Cover</a> &gt; <a href="../index.html" class="el_bundle">test</a> &gt; <a href="index.source.html" class="el_package">configuration</a> &gt; <span class="el_source">PersonalAppEcosystemException.java</span></div><h1>PersonalAppEcosystemException.java</h1><pre class="source lang-java linenums">package configuration;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.junit.Test;
+
+import configuration.Exception.ConfigurationLabelException;
+import configuration.Exception.ConfigurationSyntaxException;
+
+<span class="fc" id="L11">public class PersonalAppEcosystemException {</span>
+
+	@Test(expected = ConfigurationSyntaxException.class)
+	public void appUserNameFormat() throws IOException {
+<span class="fc" id="L15">		AppConfigurationReader reader = new AppConfigurationReader(new File(&quot;src/applications/configurations/exception/PersonalAppEcosystem_Name.txt&quot;));</span>
+<span class="nc" id="L16">		reader.readFile();</span>
+<span class="nc" id="L17">	}</span>
+	
+	@Test(expected = ConfigurationLabelException.class)
+	public void appSameApp() throws IOException {
+<span class="fc" id="L21">		AppConfigurationReader reader = new AppConfigurationReader(new File(&quot;src/applications/configurations/exception/PersonalAppEcosystem_SameApp.txt&quot;));</span>
+<span class="nc" id="L22">		reader.readFile();</span>
+<span class="nc" id="L23">	}</span>
+	
+	@Test(expected = ConfigurationSyntaxException.class)
+	public void appAppFormat() throws IOException {
+<span class="fc" id="L27">		AppConfigurationReader reader = new AppConfigurationReader(new File(&quot;src/applications/configurations/exception/PersonalAppEcosystem_AppFormat.txt&quot;));</span>
+<span class="nc" id="L28">		reader.readFile();</span>
+<span class="nc" id="L29">	}</span>
+	
+	@Test(expected = ConfigurationSyntaxException.class)
+	public void appInstallLogFormat() throws IOException {
+<span class="fc" id="L33">		AppConfigurationReader reader = new AppConfigurationReader(new File(&quot;src/applications/configurations/exception/PersonalAppEcosystem_InstallLogFormat.txt&quot;));</span>
+<span class="nc" id="L34">		reader.readFile();</span>
+<span class="nc" id="L35">	}</span>
+	
+	@Test(expected = ConfigurationSyntaxException.class)
+	public void appUninstallLogFormat() throws IOException {
+<span class="fc" id="L39">		AppConfigurationReader reader = new AppConfigurationReader(new File(&quot;src/applications/configurations/exception/PersonalAppEcosystem_UninstallLogFormat.txt&quot;));</span>
+<span class="nc" id="L40">		reader.readFile();</span>
+<span class="nc" id="L41">	}</span>
+	
+	@Test(expected = ConfigurationSyntaxException.class)
+	public void appUsageLogFormat() throws IOException {
+<span class="fc" id="L45">		AppConfigurationReader reader = new AppConfigurationReader(new File(&quot;src/applications/configurations/exception/PersonalAppEcosystem_UsageLogFormat.txt&quot;));</span>
+<span class="nc" id="L46">		reader.readFile();</span>
+<span class="nc" id="L47">	}</span>
+	
+	@Test(expected = ConfigurationSyntaxException.class)
+	public void durationFormat() throws IOException {
+<span class="fc" id="L51">		AppConfigurationReader reader = new AppConfigurationReader(new File(&quot;src/applications/configurations/exception/PersonalAppEcosystem_DurationFormat.txt&quot;));</span>
+<span class="nc" id="L52">		reader.readFile(); </span>
+<span class="nc" id="L53">	}</span>
+	
+	@Test(expected = ConfigurationSyntaxException.class)
+	public void relationFormat() throws IOException {
+<span class="fc" id="L57">		AppConfigurationReader reader = new AppConfigurationReader(new File(&quot;src/applications/configurations/exception/PersonalAppEcosystem_RelationFormat.txt&quot;));</span>
+<span class="nc" id="L58">		reader.readFile(); </span>
+<span class="nc" id="L59">	}</span>
+	
+	@Test(expected = ConfigurationLabelException.class)
+	public void relationLabel() throws IOException {
+<span class="fc" id="L63">		AppConfigurationReader reader = new AppConfigurationReader(new File(&quot;src/applications/configurations/exception/PersonalAppEcosystem_RelationLabel.txt&quot;));</span>
+<span class="nc" id="L64">		reader.readFile();</span>
+<span class="nc" id="L65">	}</span>
+	
+	@Test(expected = ConfigurationSyntaxException.class)
+	public void periodFormat() throws IOException {
+<span class="fc" id="L69">		AppConfigurationReader reader = new AppConfigurationReader(new File(&quot;src/applications/configurations/exception/PersonalAppEcosystem_PeriodFormat.txt&quot;));</span>
+<span class="nc" id="L70">		reader.readFile(); </span>
+<span class="nc" id="L71">	}</span>
+	
+	@Test(expected = ConfigurationSyntaxException.class)
+	public void unknownLabel() throws IOException {
+<span class="fc" id="L75">		AppConfigurationReader reader = new AppConfigurationReader(new File(&quot;src/applications/configurations/exception/PersonalAppEcosystem_UnknownLabel.txt&quot;));</span>
+<span class="nc" id="L76">		reader.readFile();</span>
+<span class="nc" id="L77">	}</span>
+	
+	@Test(expected = ConfigurationSyntaxException.class)
+	public void calendar() throws IOException {
+<span class="fc" id="L81">		AppConfigurationReader reader = new AppConfigurationReader(new File(&quot;src/applications/configurations/exception/PersonalAppEcosystem_Calendar.txt&quot;));</span>
+<span class="nc" id="L82">		reader.readFile(); </span>
+<span class="nc" id="L83">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span>SC_Lab4_Cover (May 17, 2019 11:39:10 AM)</div></body></html>

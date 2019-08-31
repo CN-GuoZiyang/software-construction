@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>Application.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">SC_Lab4_Cover (May 17, 2019 11:39:10 AM)</a> &gt; <a href="../../index.html" class="el_group">SC_Lab4_Cover</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">applications</a> &gt; <span class="el_source">Application.java</span></div><h1>Application.java</h1><pre class="source lang-java linenums">package applications;
+
+import APIs.CircularOrbitAPIs;
+import APIs.CircularOrbitHelper;
+import APIs.Difference;
+import centralObject.CentralObject;
+import circularOrbit.AtomStructure;
+import circularOrbit.CircularOrbit;
+import circularOrbit.PersonalAppEcosystem;
+import circularOrbit.StellarSystem;
+import configuration.Exception.ConfigurationException;
+import factory.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import physicalObject.App;
+import physicalObject.Electron;
+import physicalObject.PhysicalObject;
+import physicalObject.Planet;
+import track.Track;
+
+import java.io.File;
+import java.io.IOException;
+import java.math.BigDecimal;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+import java.util.Scanner;
+
+/**
+ * the application of the project
+ *
+ * @author Guo Ziyang
+ */
+<span class="nc" id="L35">public class Application {</span>
+
+<span class="nc" id="L37">	private static Scanner scanner = new Scanner(System.in, &quot;UTF-8&quot;);</span>
+
+	private static CircularOrbit&lt;? extends CentralObject, ? extends PhysicalObject&gt; circularOrbit;
+<span class="nc" id="L40">	private static CircularOrbitAPIs&lt;CentralObject, PhysicalObject&gt; circularOrbitAPIs = new CircularOrbitAPIs&lt;&gt;();</span>
+<span class="nc" id="L41">	private static int typeChoice = 4;</span>
+
+<span class="nc" id="L43">	public static final Logger logger = LoggerFactory.getLogger(Application.class);</span>
+<span class="nc" id="L44">	public static LogReader logReader = new LogReader();</span>
+
+	public static void main(String[] args) {
+<span class="nc" id="L47">		System.out.println(&quot;请选择轨道系统类型：&quot;);</span>
+<span class="nc" id="L48">		System.out.println(&quot;1. Stellar System&quot;);</span>
+<span class="nc" id="L49">		System.out.println(&quot;2. Atom Structure&quot;);</span>
+<span class="nc" id="L50">		System.out.println(&quot;3. Personal App Ecosystem&quot;);</span>
+<span class="nc bnc" id="L51" title="All 2 branches missed.">		while (typeChoice &gt; 3) {</span>
+<span class="nc" id="L52">			System.out.print(&quot;请选择：&quot;);</span>
+<span class="nc" id="L53">			typeChoice = scanner.nextInt();</span>
+		}
+<span class="nc" id="L55">		while (true) {</span>
+<span class="nc" id="L56">			menu();</span>
+		}
+	}
+
+	@SuppressWarnings(&quot;unchecked&quot;)
+	private static void menu() {
+<span class="nc" id="L62">		System.out.println();</span>
+<span class="nc" id="L63">		System.out.println(&quot;1 . 从文件中创建系统&quot;);</span>
+<span class="nc" id="L64">		System.out.println(&quot;2 . 可视化当前系统&quot;);</span>
+<span class="nc" id="L65">		System.out.println(&quot;3 . 添加轨道&quot;);</span>
+<span class="nc" id="L66">		System.out.println(&quot;4 . 添加物体&quot;);</span>
+<span class="nc" id="L67">		System.out.println(&quot;5 . 删除物体&quot;);</span>
+<span class="nc" id="L68">		System.out.println(&quot;6 . 删除轨道&quot;);</span>
+<span class="nc" id="L69">		System.out.println(&quot;7 . 计算系统的熵&quot;);</span>
+<span class="nc bnc" id="L70" title="All 4 branches missed.">		switch (typeChoice) {</span>
+		case 1:
+<span class="nc" id="L72">			System.out.println(&quot;8 . 计算t时刻行星位置&quot;);</span>
+<span class="nc" id="L73">			System.out.println(&quot;9 . 计算恒星与行星的物理距离&quot;);</span>
+<span class="nc" id="L74">			System.out.println(&quot;10. 计算行星之间的物理距离&quot;);</span>
+<span class="nc" id="L75">			System.out.println(&quot;11. 日志查询&quot;);</span>
+<span class="nc" id="L76">			System.out.println(&quot;12. 退出&quot;);</span>
+<span class="nc" id="L77">			break;</span>
+		case 2:
+<span class="nc" id="L79">			System.out.println(&quot;8 . 电子跃迁&quot;);</span>
+<span class="nc" id="L80">			System.out.println(&quot;9 . 日志查询&quot;);</span>
+<span class="nc" id="L81">			System.out.println(&quot;10. 退出&quot;);</span>
+<span class="nc" id="L82">			break;</span>
+		case 3:
+<span class="nc" id="L84">			System.out.println(&quot;8 . 不同时间段轨道差异&quot;);</span>
+<span class="nc" id="L85">			System.out.println(&quot;9 . 计算App的逻辑距离&quot;);</span>
+<span class="nc" id="L86">			System.out.println(&quot;10. 日志查询&quot;);</span>
+<span class="nc" id="L87">			System.out.println(&quot;11. 退出&quot;);</span>
+<span class="nc" id="L88">			break;</span>
+		default:
+<span class="nc" id="L90">			logger.error(&quot;Unknown error occors!&quot;);</span>
+<span class="nc" id="L91">			System.exit(1);</span>
+		}
+<span class="nc" id="L93">		System.out.print(&quot;请输入选择：&quot;);</span>
+<span class="nc" id="L94">		int choice = scanner.nextInt();</span>
+<span class="nc" id="L95">		scanner = new Scanner(System.in, &quot;UTF-8&quot;);</span>
+<span class="nc bnc" id="L96" title="All 13 branches missed.">		switch (choice) {</span>
+		case 1:
+<span class="nc" id="L98">			System.out.println(&quot;请输入文件路径：&quot;);</span>
+<span class="nc" id="L99">			while (true) {</span>
+				try {
+<span class="nc" id="L101">					String filePath = scanner.nextLine();</span>
+<span class="nc" id="L102">					File configFile = new File(filePath);</span>
+<span class="nc bnc" id="L103" title="All 2 branches missed.">					if (!configFile.exists()) {</span>
+<span class="nc" id="L104">						logger.error(&quot;configuration file {} does not exist&quot;, filePath);</span>
+<span class="nc" id="L105">						System.out.println(&quot;配置文件不存在，请重新输入：&quot;);</span>
+<span class="nc" id="L106">						continue;</span>
+					}
+<span class="nc bnc" id="L108" title="All 4 branches missed.">					switch (typeChoice) {</span>
+					case 1:
+<span class="nc" id="L110">						OrbitWithPositionFactory orbitWithPositionFactory = new OrbitWithPositionFactory();</span>
+<span class="nc" id="L111">						circularOrbit = orbitWithPositionFactory.buildStellarSystem(configFile);</span>
+<span class="nc" id="L112">						break;</span>
+					case 2:
+<span class="nc" id="L114">						OrbitWithoutPositionFactory orbitWithoutPositionFactory = new OrbitWithoutPositionFactory();</span>
+<span class="nc" id="L115">						circularOrbit = orbitWithoutPositionFactory.buildAtomStructure(configFile);</span>
+<span class="nc" id="L116">						break;</span>
+					case 3:
+<span class="nc" id="L118">						OrbitWithoutPositionFactory orbitWithoutPositionFactory2 = new OrbitWithoutPositionFactory();</span>
+<span class="nc" id="L119">						orbitWithoutPositionFactory2.buildPersonalAppEcosystem(configFile);</span>
+<span class="nc" id="L120">						break;</span>
+					default:
+<span class="nc" id="L122">						logger.error(&quot;Unknown error occurs!&quot;, new RuntimeException());</span>
+					}
+<span class="nc" id="L124">					break;</span>
+<span class="nc" id="L125">				} catch (ConfigurationException e1) {</span>
+<span class="nc" id="L126">					e1.printStackTrace();</span>
+<span class="nc" id="L127">					System.out.println(&quot;配置格式错误，请重新输入文件路径：&quot;);</span>
+<span class="nc" id="L128">				} catch (IOException e2) {</span>
+<span class="nc" id="L129">					e2.printStackTrace();</span>
+<span class="nc" id="L130">					System.out.println(&quot;读取文件错误，请重新输入文件路径：&quot;);</span>
+				}
+			}
+			break;
+		case 2:
+<span class="nc bnc" id="L135" title="All 2 branches missed.">			if (typeChoice == 3) {</span>
+<span class="nc" id="L136">				System.out.print(&quot;请选择时间段的索引：&quot;);</span>
+<span class="nc" id="L137">				int index = scanner.nextInt();</span>
+<span class="nc" id="L138">				circularOrbit = PersonalAppEcosystem.ecosystems.get(index);</span>
+			}
+<span class="nc" id="L140">			CircularOrbitHelper.visualize(circularOrbit);</span>
+<span class="nc" id="L141">			break;</span>
+		case 3:
+<span class="nc bnc" id="L143" title="All 2 branches missed.">			if (typeChoice == 3) {</span>
+<span class="nc" id="L144">				System.out.println(&quot;请选择时间段索引：&quot;);</span>
+<span class="nc" id="L145">				int index = scanner.nextInt();</span>
+<span class="nc" id="L146">				circularOrbit = PersonalAppEcosystem.ecosystems.get(index);</span>
+			}
+<span class="nc" id="L148">			System.out.println(&quot;请输入轨道半径：&quot;);</span>
+<span class="nc" id="L149">			double radius = scanner.nextDouble();</span>
+<span class="nc" id="L150">			circularOrbit.addTrack(radius);</span>
+<span class="nc" id="L151">			break;</span>
+		case 4:
+<span class="nc bnc" id="L153" title="All 2 branches missed.">			if (typeChoice == 3) {</span>
+<span class="nc" id="L154">				System.out.println(&quot;请选择时间段索引：&quot;);</span>
+<span class="nc" id="L155">				int index = scanner.nextInt();</span>
+<span class="nc" id="L156">				circularOrbit = PersonalAppEcosystem.ecosystems.get(index);</span>
+			}
+<span class="nc bnc" id="L158" title="All 4 branches missed.">			switch (typeChoice) {</span>
+			case 1:
+<span class="nc" id="L160">				System.out.println(&quot;请按顺序输入名称,形态,颜色,行星半径,轨道半径,公转速度,公转方向,初始位置的角度，以英文逗号分割&quot;);</span>
+<span class="nc" id="L161">				String string = scanner.nextLine();</span>
+<span class="nc" id="L162">				String[] strings = string.split(&quot;,&quot;);</span>
+<span class="nc" id="L163">				PlanetFactory planetFactory = new PlanetFactory();</span>
+<span class="nc" id="L164">				Planet planet = planetFactory.build(strings[0], strings[1], strings[2], number2Double(strings[3]),</span>
+<span class="nc" id="L165">						number2Double(strings[4]),</span>
+<span class="nc" id="L166">						(number2Double(strings[5]) * 180) / (number2Double(strings[4]) * Math.PI),</span>
+<span class="nc" id="L167">						&quot;CW&quot;.equals(strings[6]), number2Double(strings[7]));</span>
+<span class="nc" id="L168">				((StellarSystem) circularOrbit).addPhysicalObject(planet, planet.getTrackRadius(),</span>
+<span class="nc" id="L169">						planet.getStartAngle());</span>
+<span class="nc" id="L170">				break;</span>
+			case 2:
+<span class="nc" id="L172">				System.out.print(&quot;请输入轨道半径：&quot;);</span>
+<span class="nc" id="L173">				double atomRadius = scanner.nextDouble();</span>
+<span class="nc" id="L174">				ElectronFactory electronFactory = new ElectronFactory();</span>
+<span class="nc" id="L175">				Electron electron = electronFactory.build();</span>
+<span class="nc" id="L176">				((AtomStructure) circularOrbit).addPhysicalObject(electron, atomRadius);</span>
+<span class="nc" id="L177">				break;</span>
+			case 3:
+<span class="nc" id="L179">				System.out.println(&quot;请按顺序输入App名称,公司,版本,功能描述,业务领域，英文逗号分割&quot;);</span>
+<span class="nc" id="L180">				String string2 = scanner.nextLine();</span>
+<span class="nc" id="L181">				String[] strings2 = string2.split(&quot;,&quot;);</span>
+<span class="nc" id="L182">				AppFactory appFactory = new AppFactory();</span>
+<span class="nc" id="L183">				App app = appFactory.build(strings2[0], strings2[1], strings2[2], strings2[3], strings2[4]);</span>
+<span class="nc" id="L184">				System.out.print(&quot;请输入轨道半径：&quot;);</span>
+<span class="nc" id="L185">				double appRadius = scanner.nextDouble();</span>
+<span class="nc" id="L186">				((PersonalAppEcosystem) circularOrbit).addPhysicalObject(app, appRadius);</span>
+<span class="nc" id="L187">				break;</span>
+			default:
+<span class="nc" id="L189">				logger.error(&quot;Unknown error occurs&quot;, new RuntimeException());</span>
+			}
+<span class="nc" id="L191">			break;</span>
+		case 5:
+<span class="nc bnc" id="L193" title="All 2 branches missed.">			if (typeChoice == 3) {</span>
+<span class="nc" id="L194">				System.out.println(&quot;请选择时间段索引：&quot;);</span>
+<span class="nc" id="L195">				int index = scanner.nextInt();</span>
+<span class="nc" id="L196">				circularOrbit = PersonalAppEcosystem.ecosystems.get(index);</span>
+			}
+<span class="nc bnc" id="L198" title="All 2 branches missed.">			if (typeChoice == 2) {</span>
+<span class="nc" id="L199">				System.out.print(&quot;请输入要删除的电子的轨道半径：&quot;);</span>
+<span class="nc" id="L200">				double removeObjectRadius = scanner.nextDouble();</span>
+<span class="nc" id="L201">				Track removeObjectTrack = circularOrbit.getTrack(removeObjectRadius);</span>
+<span class="nc" id="L202">				List&lt;? extends PhysicalObject&gt; physicalObjects = circularOrbit.getPhysicalObjects(removeObjectTrack);</span>
+<span class="nc bnc" id="L203" title="All 2 branches missed.">				if (physicalObjects.isEmpty()) {</span>
+<span class="nc" id="L204">					System.out.println(&quot;当前轨道暂无电子&quot;);</span>
+<span class="nc" id="L205">					return;</span>
+				} else {
+<span class="nc" id="L207">					physicalObjects.remove(0);</span>
+				}
+<span class="nc" id="L209">			} else {</span>
+<span class="nc" id="L210">				System.out.println(&quot;请输入删除物体的名字：&quot;);</span>
+<span class="nc" id="L211">				String removeObjectName = scanner.next();</span>
+<span class="nc" id="L212">				PhysicalObject removeObject = circularOrbit.getObject(removeObjectName);</span>
+<span class="nc" id="L213">				((CircularOrbit&lt;?, ? super PhysicalObject&gt;) circularOrbit).removePhysicalObject(removeObject);</span>
+			}
+<span class="nc" id="L215">			break;</span>
+		case 6:
+<span class="nc bnc" id="L217" title="All 2 branches missed.">			if (typeChoice == 3) {</span>
+<span class="nc" id="L218">				System.out.println(&quot;请选择时间段索引：&quot;);</span>
+<span class="nc" id="L219">				int index = scanner.nextInt();</span>
+<span class="nc" id="L220">				circularOrbit = PersonalAppEcosystem.ecosystems.get(index);</span>
+			}
+<span class="nc" id="L222">			System.out.print(&quot;请输入需要删除的轨道半径：&quot;);</span>
+<span class="nc" id="L223">			double trackRadius = scanner.nextDouble();</span>
+<span class="nc" id="L224">			circularOrbit.removeTrack(trackRadius);</span>
+<span class="nc" id="L225">			break;</span>
+		case 7:
+<span class="nc bnc" id="L227" title="All 2 branches missed.">			if (typeChoice == 3) {</span>
+<span class="nc" id="L228">				System.out.println(&quot;请选择时间段索引：&quot;);</span>
+<span class="nc" id="L229">				int index = scanner.nextInt();</span>
+<span class="nc" id="L230">				circularOrbit = PersonalAppEcosystem.ecosystems.get(index);</span>
+			}
+<span class="nc" id="L232">			System.out.println(&quot;该系统的熵为&quot; + circularOrbitAPIs</span>
+<span class="nc" id="L233">					.getObjectDistributionEntropy((CircularOrbit&lt;CentralObject, PhysicalObject&gt;) circularOrbit));</span>
+<span class="nc" id="L234">			break;</span>
+		case 8:
+<span class="nc bnc" id="L236" title="All 4 branches missed.">			switch (typeChoice) {</span>
+			case 1:
+<span class="nc" id="L238">				System.out.print(&quot;请输入时刻（s）：&quot;);</span>
+<span class="nc" id="L239">				int second = scanner.nextInt();</span>
+<span class="nc" id="L240">				System.out.print(&quot;请输入要查看的行星名称：&quot;);</span>
+<span class="nc" id="L241">				String planetName = scanner.next();</span>
+<span class="nc" id="L242">				Planet planet = (Planet) circularOrbit.getObject(planetName);</span>
+<span class="nc" id="L243">				double angle = planet.getStartAngle() + planet.getSpeed() * second;</span>
+<span class="nc" id="L244">				System.out.println(second + &quot;秒后，该行星位于半径&quot; + planet.getTrackRadius() + &quot;，角度&quot; + angle + &quot;处&quot;);</span>
+<span class="nc" id="L245">				break;</span>
+			case 2:
+<span class="nc" id="L247">				System.out.print(&quot;请输入电子所在轨道半径：&quot;);</span>
+<span class="nc" id="L248">				double fromRadius = scanner.nextDouble();</span>
+<span class="nc" id="L249">				Electron fromElectron = (Electron) circularOrbit.getPhysicalObjects(circularOrbit.getTrack(fromRadius))</span>
+<span class="nc" id="L250">						.get(0);</span>
+<span class="nc" id="L251">				System.out.print(&quot;请输入目标轨道半径：&quot;);</span>
+<span class="nc" id="L252">				double toRadius = scanner.nextDouble();</span>
+<span class="nc" id="L253">				((AtomStructure) circularOrbit).transit(fromElectron, toRadius);</span>
+<span class="nc" id="L254">				break;</span>
+			case 3:
+<span class="nc" id="L256">				System.out.print(&quot;请输入时间段1：&quot;);</span>
+<span class="nc" id="L257">				int time1 = scanner.nextInt();</span>
+<span class="nc" id="L258">				System.out.print(&quot;请输入时间段2：&quot;);</span>
+<span class="nc" id="L259">				int time2 = scanner.nextInt();</span>
+<span class="nc" id="L260">				PersonalAppEcosystem personalAppEcosystem1 = PersonalAppEcosystem.ecosystems.get(time1);</span>
+<span class="nc" id="L261">				PersonalAppEcosystem personalAppEcosystem2 = PersonalAppEcosystem.ecosystems.get(time2);</span>
+<span class="nc" id="L262">				Difference difference = circularOrbitAPIs.getDifference(personalAppEcosystem1, personalAppEcosystem2);</span>
+<span class="nc" id="L263">				System.out.println(difference);</span>
+<span class="nc" id="L264">				break;</span>
+			default:
+<span class="nc" id="L266">				logger.error(&quot;Unknown error occurs&quot;, new RuntimeException());</span>
+			}
+<span class="nc" id="L268">			break;</span>
+		case 9:
+<span class="nc bnc" id="L270" title="All 4 branches missed.">			switch (typeChoice) {</span>
+			case 1:
+<span class="nc" id="L272">				System.out.print(&quot;请输入行星名称：&quot;);</span>
+<span class="nc" id="L273">				String planetName = scanner.next();</span>
+<span class="nc" id="L274">				Planet planet = (Planet) circularOrbit.getObject(planetName);</span>
+<span class="nc" id="L275">				System.out.println(planetName + &quot;与恒星之间距离为&quot; + planet.getTrackRadius());</span>
+<span class="nc" id="L276">				break;</span>
+			case 2:
+<span class="nc" id="L278">				searchLogs();</span>
+<span class="nc" id="L279">				break;</span>
+			case 3:
+<span class="nc" id="L281">				System.out.print(&quot;请输入App1的名字：&quot;);</span>
+<span class="nc" id="L282">				String appName1 = scanner.next();</span>
+<span class="nc" id="L283">				System.out.print(&quot;请输入App2的名字：&quot;);</span>
+<span class="nc" id="L284">				String appName2 = scanner.next();</span>
+<span class="nc" id="L285">				App app1 = (App) circularOrbit.getObject(appName1);</span>
+<span class="nc" id="L286">				App app2 = (App) circularOrbit.getObject(appName2);</span>
+<span class="nc" id="L287">				int logicalDistance = circularOrbitAPIs.getLogicalDistance(circularOrbit, app1, app2);</span>
+<span class="nc" id="L288">				System.out.println(&quot;两个App的逻辑距离为&quot; + logicalDistance);</span>
+<span class="nc" id="L289">				break;</span>
+			default:
+<span class="nc" id="L291">				logger.error(&quot;Unknown error occurs&quot;, new RuntimeException());</span>
+			}
+<span class="nc" id="L293">			break;</span>
+		case 10:
+<span class="nc bnc" id="L295" title="All 4 branches missed.">			switch (typeChoice) {</span>
+			case 1:
+<span class="nc" id="L297">				System.out.print(&quot;请输入行星1的名字：&quot;);</span>
+<span class="nc" id="L298">				String planetName1 = scanner.next();</span>
+<span class="nc" id="L299">				Planet planet1 = (Planet) circularOrbit.getObject(planetName1);</span>
+<span class="nc" id="L300">				System.out.print(&quot;请输入行星2的名字：&quot;);</span>
+<span class="nc" id="L301">				String planetName2 = scanner.next();</span>
+<span class="nc" id="L302">				Planet planet2 = (Planet) circularOrbit.getObject(planetName2);</span>
+<span class="nc" id="L303">				double x1 = planet1.getTrackRadius() * Math.sin(planet1.getTrackRadius() * Math.PI / 180);</span>
+<span class="nc" id="L304">				double y1 = planet1.getTrackRadius() * Math.cos(planet1.getTrackRadius() * Math.PI / 180);</span>
+<span class="nc" id="L305">				double x2 = planet2.getTrackRadius() * Math.sin(planet2.getTrackRadius() * Math.PI / 180);</span>
+<span class="nc" id="L306">				double y2 = planet2.getTrackRadius() * Math.cos(planet2.getTrackRadius() * Math.PI / 180);</span>
+<span class="nc" id="L307">				double physicalDistance = Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));</span>
+<span class="nc" id="L308">				System.out.println(&quot;两行星间的物理距离为&quot; + physicalDistance);</span>
+<span class="nc" id="L309">				break;</span>
+			case 2:
+<span class="nc" id="L311">				System.exit(0);</span>
+			case 3:
+<span class="nc" id="L313">				searchLogs();</span>
+<span class="nc" id="L314">				break;</span>
+			default:
+<span class="nc" id="L316">				logger.error(&quot;Unknown error occurs&quot;, new RuntimeException());</span>
+			}
+<span class="nc" id="L318">			break;</span>
+		case 11:
+<span class="nc bnc" id="L320" title="All 4 branches missed.">			switch (typeChoice) {</span>
+			case 1:
+<span class="nc" id="L322">				searchLogs();</span>
+<span class="nc" id="L323">				break;</span>
+			case 2:
+<span class="nc" id="L325">				System.out.println(&quot;无此选项！&quot;);</span>
+<span class="nc" id="L326">				break;</span>
+			case 3:
+<span class="nc" id="L328">				System.exit(0);</span>
+			default:
+<span class="nc" id="L330">				logger.error(&quot;Unknown error occurs&quot;, new RuntimeException());</span>
+			}
+<span class="nc" id="L332">			break;</span>
+		case 12:
+<span class="nc bnc" id="L334" title="All 2 branches missed.">			if (typeChoice == 1) {</span>
+<span class="nc" id="L335">				System.exit(0);</span>
+<span class="nc" id="L336">			} else {</span>
+<span class="nc" id="L337">				System.out.println(&quot;无此选项！&quot;);</span>
+<span class="nc" id="L338">				break;</span>
+			}
+		default:
+<span class="nc" id="L341">			System.out.println(&quot;无此选项！&quot;);</span>
+			break;
+		}
+<span class="nc" id="L344">	}</span>
+
+	private static void searchLogs() {
+<span class="nc" id="L347">		LogReader.readLog();</span>
+<span class="nc" id="L348">		System.out.println(&quot;1. 时间段&quot;);</span>
+<span class="nc" id="L349">		System.out.println(&quot;2. 日志类型&quot;);</span>
+<span class="nc" id="L350">		System.out.println(&quot;3. 日志产生类&quot;);</span>
+<span class="nc" id="L351">		System.out.println(&quot;4. 日志产生方法&quot;);</span>
+<span class="nc" id="L352">		System.out.println(&quot;5. 输出所有&quot;);</span>
+<span class="nc" id="L353">		System.out.print(&quot;请输入选择：&quot;);</span>
+<span class="nc" id="L354">		while (true) {</span>
+<span class="nc" id="L355">			int choice = scanner.nextInt();</span>
+<span class="nc" id="L356">			scanner = new Scanner(System.in);</span>
+<span class="nc bnc" id="L357" title="All 6 branches missed.">			switch (choice) {</span>
+			case 1:
+<span class="nc" id="L359">				SimpleDateFormat dateFormat = new SimpleDateFormat(&quot;yyy-MM-dd HH:mm:ss&quot;);</span>
+<span class="nc" id="L360">				System.out.println(&quot;请输入初始时间(yyyy-MM-dd HH:mm:ss): &quot;);</span>
+<span class="nc" id="L361">				String date1String = null;</span>
+				Date date1;
+<span class="nc" id="L363">				while (true) {</span>
+					try {
+<span class="nc" id="L365">						date1String = scanner.nextLine();</span>
+<span class="nc" id="L366">						date1 = dateFormat.parse(date1String);</span>
+<span class="nc" id="L367">						break;</span>
+<span class="nc" id="L368">					} catch (ParseException e) {</span>
+<span class="nc" id="L369">						logger.error(&quot;Wrong format for date {}&quot;, date1String);</span>
+<span class="nc" id="L370">						System.out.println(&quot;日期格式错误，请重新输入：&quot;);</span>
+					}
+				}
+<span class="nc" id="L373">				System.out.println(&quot;请输入终止时间(yyyy-MM-dd HH:mm:ss): &quot;);</span>
+<span class="nc" id="L374">				String date2String = null;</span>
+				Date date2;
+<span class="nc" id="L376">				while (true) {</span>
+					try {
+<span class="nc" id="L378">						date2String = scanner.nextLine();</span>
+<span class="nc" id="L379">						date2 = dateFormat.parse(date2String);</span>
+<span class="nc" id="L380">						break;</span>
+<span class="nc" id="L381">					} catch (ParseException e) {</span>
+<span class="nc" id="L382">						logger.error(&quot;Wrong format for date {}&quot;, date2String);</span>
+<span class="nc" id="L383">						System.out.println(&quot;日期格式错误，请重新输入：&quot;);</span>
+					}
+				}
+<span class="nc" id="L386">				System.out.println(&quot;\n&quot; + LogReader.searchLogsByDate(date1, date2));</span>
+<span class="nc" id="L387">				break;</span>
+			case 2:
+<span class="nc" id="L389">				System.out.print(&quot;请输入日志类型(INFO|WARN|DEBUG|TRACE|ERROR)：&quot;);</span>
+				while (true) {
+<span class="nc" id="L391">					String typeString = scanner.nextLine();</span>
+<span class="nc bnc" id="L392" title="All 6 branches missed.">					if (!&quot;INFO&quot;.equals(typeString) &amp;&amp; !&quot;WARN&quot;.equals(typeString) &amp;&amp; !&quot;DEBUG&quot;.equals(typeString)</span>
+<span class="nc bnc" id="L393" title="All 4 branches missed.">							&amp;&amp; !&quot;TRACE&quot;.equals(typeString) &amp;&amp; !&quot;ERROR&quot;.equals(typeString)) {</span>
+<span class="nc" id="L394">						logger.error(&quot;Wrong type of log :{}&quot;, typeString);</span>
+<span class="nc" id="L395">						System.out.print(&quot;日志类型错误！请重新输入：&quot;);</span>
+<span class="nc" id="L396">					} else {</span>
+<span class="nc" id="L397">						System.out.println(&quot;\n&quot; + LogReader.searchLogsByType(typeString));</span>
+						break;
+					}
+				}
+<span class="nc" id="L401">				break;</span>
+			case 3:
+<span class="nc" id="L403">				System.out.print(&quot;请输入日志的产生类名(简单类名): &quot;);</span>
+<span class="nc" id="L404">				String className = scanner.nextLine();</span>
+<span class="nc" id="L405">				System.out.println(&quot;\n&quot; + LogReader.searchLogsByClass(className));</span>
+<span class="nc" id="L406">				break;</span>
+			case 4:
+<span class="nc" id="L408">				System.out.print(&quot;请输入日志的产生方法: &quot;);</span>
+<span class="nc" id="L409">				String method = scanner.nextLine();</span>
+<span class="nc" id="L410">				System.out.println(&quot;\n&quot; + LogReader.searchLogsByMethod(method));</span>
+<span class="nc" id="L411">				break;</span>
+			case 5:
+<span class="nc" id="L413">				System.out.println(LogReader.allLogs());</span>
+<span class="nc" id="L414">				break;</span>
+			default:
+<span class="nc" id="L416">				System.out.println(&quot;输入有误，请重新选择：&quot;);</span>
+				continue;
+			}
+			break;
+		}
+<span class="nc" id="L421">	}</span>
+
+	private static Double number2Double(String numberStr) {
+<span class="nc bnc" id="L424" title="All 2 branches missed.">		if (!numberStr.contains(&quot;e&quot;)) {</span>
+<span class="nc" id="L425">			return Double.valueOf(numberStr);</span>
+		} else {
+<span class="nc" id="L427">			BigDecimal bd = new BigDecimal(numberStr);</span>
+<span class="nc" id="L428">			return bd.doubleValue();</span>
+		}
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span>SC_Lab4_Cover (May 17, 2019 11:39:10 AM)</div></body></html>

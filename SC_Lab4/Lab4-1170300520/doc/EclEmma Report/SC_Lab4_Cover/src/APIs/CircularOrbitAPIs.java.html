@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>CircularOrbitAPIs.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">SC_Lab4_Cover (May 17, 2019 11:39:10 AM)</a> &gt; <a href="../../index.html" class="el_group">SC_Lab4_Cover</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">APIs</a> &gt; <span class="el_source">CircularOrbitAPIs.java</span></div><h1>CircularOrbitAPIs.java</h1><pre class="source lang-java linenums">package APIs;
+
+import centralObject.CentralObject;
+import circularOrbit.*;
+import physicalObject.PhysicalObject;
+import physicalObject.PhysicalObjectWithSpeed;
+import position.Position;
+import track.Track;
+
+import java.util.*;
+import java.util.Map.Entry;
+
+/**
+ * the tool class for circular orbit
+ *
+ * @param &lt;L&gt; the type of the central object
+ * @param &lt;E&gt; the type of the physical object
+ * @author Guo Ziyang
+ */
+<span class="fc" id="L20">public class CircularOrbitAPIs&lt;L, E&gt; {</span>
+
+	/**
+	 * calculate the entropy of a circular orbit
+	 *
+	 * @param circularOrbit the target circular orbit
+	 * @return the entropy of the target circular orbit
+	 */
+	public double getObjectDistributionEntropy(CircularOrbit&lt;L, E&gt; circularOrbit) {
+<span class="fc" id="L29">		Map&lt;E, Position&gt; positions = circularOrbit.getPositions();</span>
+<span class="fc" id="L30">		Map&lt;Track, Set&lt;E&gt;&gt; trackMap = new HashMap&lt;&gt;();</span>
+<span class="fc bfc" id="L31" title="All 2 branches covered.">		for (Map.Entry&lt;E, Position&gt; entry : positions.entrySet()) {</span>
+<span class="fc" id="L32">			Track track = entry.getValue().getTrack();</span>
+<span class="fc" id="L33">			E object = entry.getKey();</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">			if (!trackMap.containsKey(track)) {</span>
+<span class="fc" id="L35">				trackMap.put(track, new HashSet&lt;&gt;());</span>
+			}
+<span class="fc" id="L37">			trackMap.get(track).add(object);</span>
+		}
+<span class="fc" id="L39">		int total = 0;</span>
+<span class="fc bfc" id="L40" title="All 2 branches covered.">		for (Entry&lt;Track, Set&lt;E&gt;&gt; entry : trackMap.entrySet()) {</span>
+<span class="fc" id="L41">			total += entry.getValue().size();</span>
+		}
+<span class="fc" id="L43">		double entropy = 0;</span>
+<span class="fc bfc" id="L44" title="All 2 branches covered.">		for (Entry&lt;Track, Set&lt;E&gt;&gt; entry : trackMap.entrySet()) {</span>
+<span class="fc" id="L45">			entropy += (entry.getValue().size() / (double) total)</span>
+<span class="fc" id="L46">					* (Math.log(entry.getValue().size() / (double) total));</span>
+		}
+<span class="fc" id="L48">		return -entropy;</span>
+	}
+
+	/**
+	 * calculate the logical distance of two physical object in a circular orbit
+	 *
+	 * @param c  the target circular orbit
+	 * @param e1 one physical object
+	 * @param e2 the other physical object
+	 * @return the logical distance
+	 */
+	@SuppressWarnings(&quot;unchecked&quot;)
+	public int getLogicalDistance(CircularOrbit&lt;? extends CentralObject, ? extends PhysicalObject&gt; c, E e1, E e2) {
+<span class="fc" id="L61">		Map&lt;? extends PhysicalObject, ?&gt; relations = c.getRelations();</span>
+<span class="fc" id="L62">		int dis = 1;</span>
+<span class="fc" id="L63">		int num = 0, first = 0, last, right;</span>
+<span class="fc" id="L64">		int length = c.getPhysicalObjects().size();</span>
+<span class="fc" id="L65">		List&lt;E&gt; queue = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L66">		Set&lt;E&gt; isVisited = new HashSet&lt;&gt;();</span>
+<span class="fc" id="L67">		Map&lt;E, Double&gt; map = (Map&lt;E, Double&gt;) relations.get(e1);</span>
+<span class="fc" id="L68">		isVisited.add(e1);</span>
+<span class="pc bpc" id="L69" title="1 of 4 branches missed.">		if (map != null &amp;&amp; map.size() &gt; 0) {</span>
+<span class="fc bfc" id="L70" title="All 2 branches covered.">			for (Entry&lt;E, Double&gt; entry : map.entrySet()) {</span>
+<span class="fc bfc" id="L71" title="All 2 branches covered.">				if (entry.getKey().equals(e2)) {</span>
+<span class="fc" id="L72">					return dis;</span>
+				} else {
+<span class="fc" id="L74">					queue.add(entry.getKey());</span>
+<span class="fc" id="L75">					num++;</span>
+<span class="fc" id="L76">					isVisited.add(entry.getKey());</span>
+				}
+			}
+<span class="fc" id="L79">		} else {</span>
+<span class="fc" id="L80">			return Integer.MAX_VALUE;</span>
+		}
+<span class="fc" id="L82">		last = num;</span>
+<span class="fc" id="L83">		right = num;</span>
+<span class="fc" id="L84">		dis++;</span>
+<span class="pc bpc" id="L85" title="1 of 4 branches missed.">		while (first &lt; length &amp;&amp; !queue.isEmpty()) {</span>
+<span class="fc" id="L86">			E temp = queue.get(0);</span>
+<span class="fc" id="L87">			queue.remove(0);</span>
+<span class="fc" id="L88">			first++;</span>
+<span class="fc" id="L89">			Map&lt;E, Double&gt; tempMap = (Map&lt;E, Double&gt;) relations.get(temp);</span>
+<span class="pc bpc" id="L90" title="1 of 2 branches missed.">			if (!tempMap.isEmpty()) {</span>
+<span class="fc bfc" id="L91" title="All 2 branches covered.">				if (tempMap.containsKey(e2)) {</span>
+<span class="fc" id="L92">					return dis;</span>
+				}
+<span class="fc bfc" id="L94" title="All 2 branches covered.">				for (Entry&lt;E, Double&gt; entry : tempMap.entrySet()) {</span>
+<span class="fc bfc" id="L95" title="All 2 branches covered.">					if (!isVisited.contains(entry.getKey())) {</span>
+<span class="fc" id="L96">						queue.add(entry.getKey());</span>
+<span class="fc" id="L97">						num++;</span>
+<span class="fc" id="L98">						right++;</span>
+					}
+				}
+			}
+<span class="fc bfc" id="L102" title="All 2 branches covered.">			if (first == last) {</span>
+<span class="fc" id="L103">				dis += 1.0;</span>
+<span class="fc" id="L104">				last = right;</span>
+			}
+		}
+<span class="fc" id="L107">		return Integer.MAX_VALUE;</span>
+	}
+
+	/**
+	 * calculate the physical distance of two physical object in a circular orbit
+	 *
+	 * @param c  the target circular orbit
+	 * @param e1 one physical object
+	 * @param e2 the other physical object
+	 * @return the physical distance
+	 */
+	public Double getPhysicalDistance(CircularOrbit&lt;L, E&gt; c, E e1, E e2) {
+<span class="fc bfc" id="L119" title="All 2 branches covered.">		if (c instanceof OrbitWithoutPosition) {</span>
+<span class="fc" id="L120">			Track track1 = c.getTrack(e1);</span>
+<span class="fc" id="L121">			Track track2 = c.getTrack(e2);</span>
+<span class="fc" id="L122">			return Math.abs(track1.getRadius() - track2.getRadius());</span>
+		} else {
+<span class="fc" id="L124">			PhysicalObjectWithSpeed ee1 = (PhysicalObjectWithSpeed) e1;</span>
+<span class="fc" id="L125">			PhysicalObjectWithSpeed ee2 = (PhysicalObjectWithSpeed) e2;</span>
+<span class="fc" id="L126">			double x1 = ee1.getTrackRadius() * Math.cos(ee1.getStartAngle() * Math.PI / 180);</span>
+<span class="fc" id="L127">			double y1 = ee1.getTrackRadius() * Math.sin(ee1.getStartAngle() * Math.PI / 180);</span>
+<span class="fc" id="L128">			double x2 = ee2.getTrackRadius() * Math.cos(ee2.getStartAngle() * Math.PI / 180);</span>
+<span class="fc" id="L129">			double y2 = ee2.getTrackRadius() * Math.sin(ee2.getStartAngle() * Math.PI / 180);</span>
+<span class="fc" id="L130">			return Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));</span>
+		}
+	}
+
+	/**
+	 * get the difference of two circular orbits
+	 *
+	 * @param c1 one circular orbit
+	 * @param c2 the other circular orbit
+	 * @return the difference object of two circular orbits
+	 */
+	public Difference getDifference(CircularOrbit&lt;? extends CentralObject, ? extends PhysicalObject&gt; c1,
+			CircularOrbit&lt;? extends CentralObject, ? extends PhysicalObject&gt; c2) {
+<span class="fc" id="L143">		int trackNumber = c1.getTracks().size() - c2.getTracks().size();</span>
+<span class="pc bpc" id="L144" title="1 of 4 branches missed.">		if (c1 instanceof AtomStructure &amp;&amp; c2 instanceof AtomStructure) {</span>
+<span class="fc" id="L145">			Difference difference = new Difference(trackNumber);</span>
+<span class="fc" id="L146">			Map&lt;Double, Integer&gt; physicalObjectNumberDifference = difference.getPhysicalObjectNumberDifference();</span>
+<span class="pc bpc" id="L147" title="1 of 4 branches missed.">			for (int i = 1; i &lt;= ((trackNumber &lt; 0) ? c2.getTracks().size() : c1.getTracks().size()); i++) {</span>
+<span class="fc" id="L148">				Track track1 = c1.getTrack((double) i);</span>
+<span class="fc" id="L149">				Track track2 = c2.getTrack((double) i);</span>
+<span class="fc bfc" id="L150" title="All 2 branches covered.">				if (track1 == null) {</span>
+<span class="fc" id="L151">					physicalObjectNumberDifference.put((double) i, -c2.getPhysicalObjects(track2).size());</span>
+<span class="pc bpc" id="L152" title="1 of 2 branches missed.">				} else if (track2 == null) {</span>
+<span class="nc" id="L153">					physicalObjectNumberDifference.put((double) i, c1.getPhysicalObjects(track1).size());</span>
+<span class="nc" id="L154">				} else {</span>
+<span class="fc" id="L155">					physicalObjectNumberDifference.put((double) i,</span>
+<span class="fc" id="L156">							c1.getPhysicalObjects(track1).size() - c2.getPhysicalObjects(track2).size());</span>
+				}
+			}
+<span class="fc" id="L159">			return difference;</span>
+<span class="pc bpc" id="L160" title="2 of 4 branches missed.">		} else if ((c1 instanceof PersonalAppEcosystem &amp;&amp; c2 instanceof PersonalAppEcosystem)</span>
+<span class="nc bnc" id="L161" title="All 4 branches missed.">				|| (c1 instanceof StellarSystem &amp;&amp; c2 instanceof StellarSystem)) {</span>
+<span class="fc" id="L162">			DifferenceWithObject difference = new DifferenceWithObject(trackNumber);</span>
+<span class="fc" id="L163">			Map&lt;Double, Integer&gt; physicalObjectNumberDifference = difference.getPhysicalObjectNumberDifference();</span>
+<span class="fc" id="L164">			Map&lt;Double, List&lt;Set&lt;PhysicalObject&gt;&gt;&gt; objectDifference = difference.getPhysicalObjectDifference();</span>
+<span class="pc bpc" id="L165" title="1 of 4 branches missed.">			for (int i = 1; i &lt;= ((trackNumber &lt; 0) ? c2.getTracks().size() : c1.getTracks().size()); i++) {</span>
+<span class="fc" id="L166">				Track track1 = c1.getTrack((double) i);</span>
+<span class="fc" id="L167">				Track track2 = c2.getTrack((double) i);</span>
+<span class="fc" id="L168">				List&lt;Set&lt;PhysicalObject&gt;&gt; list = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L169">				list.add(new HashSet&lt;&gt;());</span>
+<span class="fc" id="L170">				list.add(new HashSet&lt;&gt;());</span>
+<span class="fc" id="L171">				objectDifference.put((double) i, list);</span>
+<span class="pc bpc" id="L172" title="1 of 2 branches missed.">				if (track1 == null) {</span>
+<span class="nc" id="L173">					physicalObjectNumberDifference.put((double) i, -c2.getPhysicalObjects(track2).size());</span>
+<span class="nc" id="L174">					list.get(1).addAll(c2.getPhysicalObjects(track2));</span>
+<span class="pc bpc" id="L175" title="1 of 2 branches missed.">				} else if (track2 == null) {</span>
+<span class="nc" id="L176">					physicalObjectNumberDifference.put((double) i, c1.getPhysicalObjects(track1).size());</span>
+<span class="nc" id="L177">					list.get(0).addAll(c1.getPhysicalObjects(track1));</span>
+<span class="nc" id="L178">				} else {</span>
+<span class="fc" id="L179">					physicalObjectNumberDifference.put((double) i,</span>
+<span class="fc" id="L180">							c1.getPhysicalObjects(track1).size() - c2.getPhysicalObjects(track2).size());</span>
+<span class="fc bfc" id="L181" title="All 2 branches covered.">					for (PhysicalObject physicalObject : c1.getPhysicalObjects(track1)) {</span>
+<span class="fc bfc" id="L182" title="All 2 branches covered.">						if (!c2.getPhysicalObjects(track2).contains(physicalObject)) {</span>
+<span class="fc" id="L183">							list.get(0).add(physicalObject);</span>
+						}
+					}
+<span class="fc bfc" id="L186" title="All 2 branches covered.">					for (PhysicalObject physicalObject : c2.getPhysicalObjects(track2)) {</span>
+<span class="fc bfc" id="L187" title="All 2 branches covered.">						if (!c1.getPhysicalObjects(track1).contains(physicalObject)) {</span>
+<span class="fc" id="L188">							list.get(1).add(physicalObject);</span>
+						}
+					}
+				}
+			}
+<span class="fc" id="L193">			return difference;</span>
+		} else {
+<span class="nc" id="L195">			return null;</span>
+		}
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span>SC_Lab4_Cover (May 17, 2019 11:39:10 AM)</div></body></html>

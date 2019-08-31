@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="SC_Lab1" default="build" basedir=".">
+ 
+	<property name="src.dir" value="src"/>
+	<property name="lib.dir" value="lib"/>
+	<property name="build.dir" value="build"/>
+	<property name="build.classes" value="${build.dir}/classes"/>
+	<property name="build.apidocs" value="build/doc"/>
+	<property name="testSrc.dir" value="test"/>
+	<property name="reports.dir" value="build/report"/>
+	<property name="correctreports.dir" value="${reports.dir}/html"/>
+
+	<path id="classpath">
+    	<fileset dir="${lib.dir}">  
+        	<include name="*.jar"/>  
+    	</fileset>
+	</path>
+
+	<target name="JUNIT">
+		<available property="junit.present" classname="junit.framework.TestCase"/>
+	</target>
+
+	<target name="compile" depends="JUNIT">
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${build.classes}"/>
+		<depend srcdir="${src.dir}" destdir="${build.classes}"/>
+		<javac srcdir="${src.dir}" destdir="${build.classes}" fork="true" includeantruntime="on">
+			<classpath>
+				<pathelement path="${build.classes}"/>
+				<pathelement path="${java.class.path}/"/>
+			</classpath>
+			<classpath refid="classpath"/>
+			<include name="**/*.java"/>
+			<compilerarg line="-encoding UTF-8 "/>
+		</javac>
+	</target>
+
+	<target name="testcompile" depends="compile">
+		<depend srcdir="${testSrc.dir}" destdir="${build.classes}"/>
+		<javac srcdir="${testSrc.dir}" destdir="${build.classes}" fork="true" includeantruntime="on">
+			<compilerarg value="-Xlint:unchecked"/>
+			<classpath>
+				<pathelement path="${build.classes}"/>
+				<pathelement path="${java.class.path}/"/>
+				<fileset dir="${lib.dir}">  
+        			<include name="*.jar"/>  
+    			</fileset>
+			</classpath>
+			<compilerarg line="-encoding UTF-8 "/>
+		</javac>
+	</target>
+
+	<target name="runtests" depends="testcompile">
+		<mkdir dir="${reports.dir}"/>
+		<delete>
+			<fileset dir="${reports.dir}" includes="**/*" />
+		</delete>
+		<junit printsummary="on" failureProperty="fail">
+			<jvmarg value="-ea"/>
+			<classpath>
+				<pathelement location="lib/***.jar" />
+				<pathelement path="${build.classes}"/>
+				<pathelement path="${java.class.path}/"/>
+			</classpath>
+			<classpath refid="classpath"/>  
+			<formatter type="xml"/>
+			<batchtest fork="yes" todir="${reports.dir}">
+				<fileset dir="${testSrc.dir}">
+					<include name="**/*Test.java"/>
+				</fileset>
+			</batchtest>
+		</junit>
+
+		<junitreport todir="${reports.dir}">
+			<fileset dir="${reports.dir}">
+    			<include name="TEST-*.xml"/>
+   			</fileset>
+   			<report format="frames" todir="${correctreports.dir}"/>
+  		</junitreport>
+	</target>
+
+	<target name="makejar" depends="compile" description="Jar生成">
+  		<delete file="build/lib/main.jar"/>
+  		<jar jarfile="build/lib/main.jar" basedir="${build.classes}">
+   			<fileset dir="${build.classes}">
+    			<exclude name="**/*Test"/>
+   			</fileset>
+			<manifest>
+				<attribute name="Main-Class" value="Main"/>
+		   </manifest>
+  		</jar>
+ 	</target>
+
+	<target name="run_MagicSquare" depends="makejar">
+		<java classname="P1.MagicSquare" classpath="build/lib/main.jar">
+			<classpath refid="classpath"/>
+		</java>
+	</target>
+
+	<target name="run_TurtleSoup" depends="makejar">
+		<java classname="P2.turtle.TurtleSoup" classpath="build/lib/main.jar" fork="true">
+			<classpath refid="classpath"/>
+		</java>
+	</target>
+
+	<target name="run_FriendshipGraph" depends="makejar">
+		<java classname="P3.FriendshipGraph" classpath="build/lib/main.jar">
+			<classpath refid="classpath"/>
+		</java>
+	</target>
+
+	<target name="run_tweet" depends="makejar">
+		<java classname="P4.twitter.Main" classpath="build/lib/main.jar" fork="true">
+			<classpath refid="classpath"/>
+			<jvmarg value="-ea"/>
+		</java>
+	</target>
+
+	<target name="run_all" depends="run_MagicSquare, run_FriendshipGraph, run_tweet">
+	</target>
+
+	<target name="build" depends="run_all, runtests">
+	</target>
+
+</project>

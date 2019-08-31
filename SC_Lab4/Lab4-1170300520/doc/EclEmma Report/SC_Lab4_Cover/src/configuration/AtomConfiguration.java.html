@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>AtomConfiguration.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">SC_Lab4_Cover (May 17, 2019 11:39:10 AM)</a> &gt; <a href="../../index.html" class="el_group">SC_Lab4_Cover</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">configuration</a> &gt; <span class="el_source">AtomConfiguration.java</span></div><h1>AtomConfiguration.java</h1><pre class="source lang-java linenums">package configuration;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * the information of a configuration file
+ *
+ * @author Guo Ziyang
+ */
+public class AtomConfiguration implements Configuration {
+	private String elementName;
+	private Integer numberOfTracks;
+	private Map&lt;Integer, Integer&gt; numberOfElectron;
+
+<span class="fc" id="L16">	public AtomConfiguration() {</span>
+<span class="fc" id="L17">		numberOfElectron = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L18">	}</span>
+
+	/**
+	 * @return the elementName
+	 */
+	public String getElementName() {
+<span class="fc" id="L24">		return elementName;</span>
+	}
+
+	/**
+	 * @param elementName the elementName to set
+	 */
+	public void setElementName(String elementName) {
+<span class="fc" id="L31">		this.elementName = elementName;</span>
+<span class="fc" id="L32">	}</span>
+
+	/**
+	 * @return the numberOfTracks
+	 */
+	public Integer getNumberOfTracks() {
+<span class="fc" id="L38">		return numberOfTracks;</span>
+	}
+
+	/**
+	 * @param numberOfTracks the numberOfTracks to set
+	 */
+	public void setNumberOfTracks(Integer numberOfTracks) {
+<span class="fc" id="L45">		this.numberOfTracks = numberOfTracks;</span>
+<span class="fc" id="L46">	}</span>
+
+	/**
+	 * @return the numberOfElectron
+	 */
+	public Map&lt;Integer, Integer&gt; getNumberOfElectron() {
+<span class="fc" id="L52">		return numberOfElectron;</span>
+	}
+
+	/**
+	 * @param numberOfElectron the numberOfElectron to set
+	 */
+	public void setNumberOfElectron(Map&lt;Integer, Integer&gt; numberOfElectron) {
+<span class="nc" id="L59">		this.numberOfElectron = numberOfElectron;</span>
+<span class="nc" id="L60">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span>SC_Lab4_Cover (May 17, 2019 11:39:10 AM)</div></body></html>

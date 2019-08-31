@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>AtomConfigurationReader.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">SC_Lab4_Cover (May 17, 2019 11:39:10 AM)</a> &gt; <a href="../../index.html" class="el_group">SC_Lab4_Cover</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">configuration</a> &gt; <span class="el_source">AtomConfigurationReader.java</span></div><h1>AtomConfigurationReader.java</h1><pre class="source lang-java linenums">package configuration;
+
+import configuration.Exception.ConfigurationDependencyException;
+import configuration.Exception.ConfigurationLabelException;
+import configuration.Exception.ConfigurationSyntaxException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+/**
+ * the implement of the atom configuration reader
+ *
+ * @author Guo Ziyang
+ */
+<span class="pc bpc" id="L19" title="1 of 2 branches missed.">public class AtomConfigurationReader extends ConfigurationReader {</span>
+
+	private AtomConfiguration atomConfiguration;
+
+<span class="fc" id="L23">	protected Logger logger = LoggerFactory.getLogger(AtomConfigurationReader.class);</span>
+
+	public AtomConfigurationReader(File file) {
+<span class="fc" id="L26">		super(file);</span>
+<span class="fc" id="L27">		configuration = new AtomConfiguration();</span>
+<span class="fc" id="L28">		atomConfiguration = (AtomConfiguration) configuration;</span>
+<span class="fc" id="L29">	}</span>
+
+	@Override
+	public void checkRep() {
+<span class="fc" id="L33">		super.checkRep();</span>
+<span class="pc bpc" id="L34" title="2 of 4 branches missed.">		assert configuration != null;</span>
+<span class="pc bpc" id="L35" title="2 of 4 branches missed.">		assert atomConfiguration != null;</span>
+<span class="fc" id="L36">	}</span>
+
+	@Override
+	public AtomConfiguration readFile() throws IOException {
+<span class="fc" id="L40">		checkRep();</span>
+<span class="fc" id="L41">		AtomConfiguration atomConfiguration = (AtomConfiguration) super.readFile();</span>
+<span class="fc bfc" id="L42" title="All 2 branches covered.">		if (atomConfiguration.getNumberOfTracks() != atomConfiguration.getNumberOfElectron().size()) {</span>
+<span class="fc" id="L43">			ConfigurationDependencyException e = new ConfigurationDependencyException(&quot;Tracks number error&quot;, lineNumber,</span>
+<span class="fc" id="L44">					file.getName());</span>
+<span class="fc" id="L45">			logger.error(&quot;Tracks number error&quot;, e);</span>
+<span class="fc" id="L46">			throw e;</span>
+		}
+<span class="fc" id="L48">		return atomConfiguration;</span>
+	}
+
+	@Override
+	public void parseConfiguration(String line) {
+<span class="fc" id="L53">		checkRep();</span>
+<span class="fc bfc" id="L54" title="All 2 branches covered.">		if (line.startsWith(&quot;ElementName ::= &quot;)) {</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">			if (atomConfiguration.getElementName() != null) {</span>
+<span class="fc" id="L56">				ConfigurationLabelException e = new ConfigurationLabelException(&quot;Duplicate element name label&quot;,</span>
+<span class="fc" id="L57">						lineNumber, file.getName());</span>
+<span class="fc" id="L58">				logger.error(&quot;Duplicate element name label&quot;, e);</span>
+<span class="fc" id="L59">				throw e;</span>
+			}
+<span class="fc" id="L61">			Pattern elementNamePattern = Pattern.compile(&quot;(?&lt;=ElementName ::= )[A-Z][a-z]?$&quot;);</span>
+<span class="fc" id="L62">			Matcher elementNameMatcher = elementNamePattern.matcher(line);</span>
+<span class="fc bfc" id="L63" title="All 2 branches covered.">			if (elementNameMatcher.find()) {</span>
+<span class="fc" id="L64">				logger.info(&quot;ElementName: {}&quot;, elementNameMatcher.group());</span>
+<span class="fc" id="L65">				atomConfiguration.setElementName(elementNameMatcher.group());</span>
+<span class="fc" id="L66">			} else {</span>
+<span class="fc" id="L67">				ConfigurationSyntaxException e = new ConfigurationSyntaxException(&quot;Wrong format of element name&quot;,</span>
+<span class="fc" id="L68">						lineNumber, file.getName());</span>
+<span class="fc" id="L69">				logger.error(&quot;Wrong format of element name&quot;, e);</span>
+<span class="fc" id="L70">				throw e;</span>
+			}
+<span class="fc bfc" id="L72" title="All 2 branches covered.">		} else if (line.startsWith(&quot;NumberOfTracks ::= &quot;)) {</span>
+<span class="fc" id="L73">			Pattern numberOfTracksPattern = Pattern.compile(&quot;(?&lt;=NumberOfTracks ::= )\\d+$&quot;);</span>
+<span class="fc" id="L74">			Matcher numberOfTracksMatcher = numberOfTracksPattern.matcher(line);</span>
+<span class="fc bfc" id="L75" title="All 2 branches covered.">			if (numberOfTracksMatcher.find()) {</span>
+<span class="fc" id="L76">				logger.info(&quot;NumberOfTracks: {}&quot;, numberOfTracksMatcher.group());</span>
+<span class="fc" id="L77">				atomConfiguration.setNumberOfTracks(Integer.valueOf(numberOfTracksMatcher.group()));</span>
+<span class="fc" id="L78">			} else {</span>
+<span class="fc" id="L79">				ConfigurationSyntaxException e = new ConfigurationSyntaxException(&quot;Wrong format of tracks number&quot;,</span>
+<span class="fc" id="L80">						lineNumber, file.getName());</span>
+<span class="fc" id="L81">				logger.error(&quot;Wrong format of tracks number&quot;, e);</span>
+<span class="fc" id="L82">				throw e;</span>
+			}
+<span class="fc bfc" id="L84" title="All 2 branches covered.">		} else if (line.startsWith(&quot;NumberOfElectron ::= &quot;)) {</span>
+<span class="fc" id="L85">			Pattern numberOfElectronPattern = Pattern.compile(&quot;(?&lt;=NumberOfElectron ::= )[\\d+/\\d+;?]+$&quot;);</span>
+<span class="fc" id="L86">			Matcher numberOfElectronMatcher = numberOfElectronPattern.matcher(line);</span>
+<span class="fc bfc" id="L87" title="All 2 branches covered.">			if (numberOfElectronMatcher.find()) {</span>
+<span class="fc" id="L88">				logger.info(&quot;NumberOfElectron: {}&quot;, numberOfElectronMatcher.group());</span>
+<span class="fc" id="L89">				String[] strings = numberOfElectronMatcher.group().split(&quot;;&quot;);</span>
+<span class="fc bfc" id="L90" title="All 2 branches covered.">				for (String string : strings) {</span>
+<span class="fc" id="L91">					atomConfiguration.getNumberOfElectron().put(Integer.valueOf(string.split(&quot;/&quot;)[0]),</span>
+<span class="fc" id="L92">							Integer.valueOf(string.split(&quot;/&quot;)[1]));</span>
+				}
+<span class="fc" id="L94">			} else {</span>
+<span class="fc" id="L95">				ConfigurationSyntaxException e = new ConfigurationSyntaxException(&quot;Wrong format of electon number&quot;,</span>
+<span class="fc" id="L96">						lineNumber, file.getName());</span>
+<span class="fc" id="L97">				logger.error(&quot;Wrong format of electon number&quot;, e);</span>
+<span class="fc" id="L98">				throw e;</span>
+			}
+		} else {
+<span class="fc" id="L101">			String s = &quot;Invalid label '&quot; + line.substring(0, line.indexOf(&quot; &quot;)) + &quot;'&quot;;</span>
+<span class="fc" id="L102">			ConfigurationSyntaxException e = new ConfigurationSyntaxException(s, lineNumber, file.getName());</span>
+<span class="fc" id="L103">			logger.error(s, e);</span>
+<span class="fc" id="L104">			throw e;</span>
+		}
+
+<span class="fc" id="L107">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span>SC_Lab4_Cover (May 17, 2019 11:39:10 AM)</div></body></html>
